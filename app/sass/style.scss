@@ -1,7 +1,66 @@
 @charset "UTF-8";
 
-// Roboto
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900);
+// PN
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 100;
+  src: url('../fonts/ProximaNova-Light.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 100;
+  src: url('../fonts/ProximaNova-LightIt.otf.eot');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/ProximaNova-Regular.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/ProximaNova-RegularIt.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/ProximaNova-Semibold.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 500;
+  src: url('../fonts/ProximaNova-SemiboldIt.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/ProximaNova-Bold.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: italic;
+  font-weight: 700;
+  src: url('../fonts/ProximaNova-BoldIt.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/ProximaNova-Extrabld.otf');
+}
+@font-face {
+  font-family: 'ProximaNova';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/ProximaNova-Black.otf');
+}
 
 // Bootstrap Glyphs
 @font-face {
