@@ -27,6 +27,7 @@ header {
     }
     &.active {
       a {
+        font-weight: 500;
         border: none !important;
         border-bottom: 4px solid $color-primary !important;
       }
@@ -36,6 +37,7 @@ header {
         vertical-align: initial;
       }
       span {
+        font-weight: 500;
         line-height: normal;
         color: $color-primary;
         display: inline-block;
@@ -152,6 +154,7 @@ header {
       margin-top: 8px;
       span {
         color: $black;
+        font-weight: 500;
         margin: 0 5px 0 0;
         @include font-size(14px);
       }
@@ -232,6 +235,7 @@ header {
             text-transform: uppercase;
           }
           .machine-name {
+            font-weight: 500;
             text-align: right;
             line-height: normal;
             color: $color-primary;
@@ -256,6 +260,9 @@ header {
             padding: 10px 15px;
             color: $color-primary;
             @include font-size(14px);
+            span {
+              font-weight: 500;
+            }
           }
         }
       }
@@ -333,6 +340,7 @@ header {
       -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
       box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
       span {
+        font-weight: 500;
         margin-left: 8px;
         color: $color-primary;
         vertical-align: middle;
@@ -410,6 +418,7 @@ header {
           text-transform: uppercase;
         }
         span:last-child {
+          font-weight: 500;
           @include font-size(16px);
         }
       }
@@ -433,6 +442,9 @@ header {
     position: absolute !important;
     color: $color-primary !important;
     background-color: transparent !important;
+    .filter-option {
+      font-weight: 500;
+    }
     &.dropdown-toggle {
       &:active, &:hover, &:focus {
         border: none !important;
