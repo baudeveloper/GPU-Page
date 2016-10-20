@@ -8,4 +8,7 @@ $(document).ready(function() {
 	$(".partition").on("slide", function(slideEvt) {
 		$(this).siblings(".slider").find(".counter").text(slideEvt.value);
 	});
+	$("#parent-partition, #gpu-partition, #gpu2-partition").on("change", function (e) {
+    $(this).siblings(".slider").find(".counter").text(e.value.newValue);
+	}); // Source: https://github.com/seiyria/bootstrap-slider/issues/336
 });

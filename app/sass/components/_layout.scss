@@ -120,7 +120,7 @@ header {
         a {
           color: $color-primary;
           border-color: $dark-greyish;
-          border-bottom-color: transparent; 
+          border-bottom-color: transparent;
           background-color: $white;
         }
       }
@@ -393,6 +393,9 @@ header {
         background-color: $super-greyish;
         .tbl-cell {
           color: $extra-greyish;
+          &:last-child {
+            vertical-align: top !important;
+          }
         }
         span {
           display: block;
@@ -408,13 +411,17 @@ header {
         display: table-cell;
       }
       .gpu-name {
+        line-height: normal;
         vertical-align: bottom;
         @include font-size(12px);
       }
       .gpu-connection {
         text-align: right;
+        line-height: normal;
+        vertical-align: bottom;
         span:first-child {
           display: block;
+          margin-bottom: 5px;
           @include font-size(9px);
           text-transform: uppercase;
         }

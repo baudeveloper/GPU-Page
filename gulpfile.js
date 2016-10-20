@@ -113,7 +113,7 @@ gulp.task('scripts', ['clean-scripts', 'vendor-scripts'], function() {
         // .pipe($.sourcemaps.write())
         .pipe($.concat('script.js'))
         .pipe($.size({title: '************ FILE SIZE: Scripts (before) ****'}))
-        .pipe($.if(argv.production, stripDebug()))
+        // .pipe($.if(argv.production, stripDebug()))
         .pipe($.if(argv.production, $.uglify()))
         .pipe($.size({title: '************ FILE SIZE: Scripts (after) ****'}))
         .pipe($.if(argv.production, $.rename({suffix: '.min'})))
