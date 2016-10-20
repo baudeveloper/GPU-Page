@@ -138,6 +138,11 @@ header {
   }
   .button-group {
     margin: 15px 0 30px;
+    @media #{$mobile} {
+      .btns {
+        margin-top: 50px !important;
+      }
+    }
     button {
       min-width: 165px;
       margin-left: 15px;

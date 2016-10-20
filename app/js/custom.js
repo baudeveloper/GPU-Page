@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$(".partition").slider();
 	$(".slider-handle").append("<div class='counter'></div>");
-	$(".slider-disabled").append("<span class='off'>GPU Partitions have been individually customized.</span>")
+	$(".button-group .slider-disabled").append("<span class='off'>GPU Partitions have been individually customized.</span>")
 	$(".partition").each(function() {
 		var temp = $(this).val();
 		$(this).siblings(".slider").find(".counter").append(temp);
