@@ -36,10 +36,10 @@
   <body>
     <div class="container">
 
-      <header class="row">
+      <header>
 
           <section id="branding">
-            <img src="images/logo-amd.png" alt="AMD Logo"> <span>MxGPUI</span>
+            <img src="images/logo-amd.png" alt="AMD Logo"> MxGPUI
           </section><!-- end of #branding-->
 
           <section id="page-navigation">
@@ -95,14 +95,14 @@
 
                       <div id="vm" role="tabpanel" class="tab-pane active">
 
-                        <header id="vm-header" class="row">
+                        <header id="vm-header">
                           <div class="pane-actions">
                             <button type="button" class="btn btn-default btn-orange">Auto Assign</button>
                             <button type="button" class="btn btn-default disabled">Apply</button>
                           </div><!-- end of .pane-actions-->
                         </header>
 
-                        <section id="vm-listing" class="row clearfix">
+                        <section id="vm-listing">
                             <div class="col-sm-12">
                               <ul>
                                   <li id="SallyBridge01">
@@ -188,7 +188,7 @@
 
                       <div id="gpu" role="tabpanel" class="tab-pane">
 
-                        <header id="gpu-header" class="row">
+                        <header id="gpu-header">
                           <div id="primary-slider" class="slide">
                             <span>Partitions:</span>
                             <input id="parent-partition" type="text" data-slider-handle="custom" data-slider-tooltip="hide" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5" data-slider-enabled="false"
@@ -198,10 +198,10 @@
                             <button type="button" class="btn btn-default disabled">Apply</button>
                             <button type="button" class="btn btn-default disabled">Restore</button>
                             <button type="button" class="btn btn-default btn-orange">Refresh </button>
-                          </div><!-- end of .page-actions -->
+                          </div><!-- end of .pane-actions -->
                         </header>
 
-                        <section id="gpu-listing" class="row clearfix">
+                        <section id="gpu-listing">
                           <div class="col-sm-12">
                               <ul class="node-parent">
 
@@ -218,19 +218,19 @@
                                   </div>
                                   <ul class="node-children">
                                     <li id="mxgpu01" class="connected">
-                                        <span mxgpu-status">Connected to</span>
-                                        <span gpu-name">mxGPU 01</span>
-                                        <span vm-name">VM SallyBridge01</span>
+                                        <span class="mxgpu-status">Connected to</span>
+                                        <span class="gpu-name">mxGPU 01</span>
+                                        <span class="vm-name">VM SallyBridge01</span>
                                     </li><!-- end of #mxgpu01 -->
                                     <li id="mxgpu02" class="in-use">
-                                        <span mxgpu-status">In Use</span>
-                                        <span gpu-name">mxGPU 02</span>
-                                        <span vm-name">VM Transformer02</span>
+                                        <span class="mxgpu-status">In Use</span>
+                                        <span class="gpu-name">mxGPU 02</span>
+                                        <span class="vm-name">VM Transformer02</span>
                                     </li><!-- end of #mxgpu02 -->
                                     <li id="mxgpu03" class="in-use">
-                                        <span mxgpu-status">In Use</span>
-                                        <span gpu-name">mxGPU 03</span>
-                                        <span vm-name">VM JamesBond007</span>
+                                        <span class="mxgpu-status">In Use</span>
+                                        <span class="gpu-name">mxGPU 03</span>
+                                        <span class="vm-name">VM JamesBond007</span>
                                     </li><!-- end of #mxgpu03 -->
                                   </ul><!-- end of .node-children -->
                                 </li><!-- end of #gpu01 -->
@@ -248,14 +248,14 @@
                                   </div>
                                   <ul class="node-children">
                                     <li id="mxgpu04" class="not-connected">
-                                        <span mxgpu-status">Not Connected</span>
-                                        <span gpu-name">mxGPU 04</span>
-                                        <span vm-name"></span>
+                                        <span class="mxgpu-status">Not Connected</span>
+                                        <span class="gpu-name">mxGPU 04</span>
+                                        <span class="vm-name"></span>
                                     </li><!-- end of #mxgpu04 -->
                                     <li id="mxgpu05" class="not-connected">
-                                        <span mxgpu-status">Not Connected</span>
-                                        <span gpu-name">mxGPU 05</span>
-                                        <span vm-name"></span>
+                                        <span class="mxgpu-status">Not Connected</span>
+                                        <span class="gpu-name">mxGPU 05</span>
+                                        <span class="vm-name"></span>
                                     </li><!-- end of #mxgpu05 -->
                                   </ul><!-- end of .node-children -->
                                 </li><!-- end of #gpu02 -->
