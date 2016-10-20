@@ -167,6 +167,9 @@ header {
       }
       .slider {
         width: 290px;
+        @media #{$desktop} {
+          width: 250px;
+        }
       }
       .off {
         width: auto;
