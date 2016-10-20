@@ -1,0 +1,104 @@
+// 1. Media Queries
+
+$mobile: "only screen and (max-width: $screen-xs-max)";
+$tablet: "only screen and (max-width: $screen-sm-max)";
+$desktop: "only screen and (max-width: $screen-md-max)";
+
+// Useful mixins: http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/.
+
+// 2. REM Font Sizes.
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+// 3. Transitions
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+// 4. Cross Browser Opacity
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// 5. Visually Hidden
+
+@mixin visuallyhidden() {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// 6. Variables
+
+// Font-sizes.
+
+$font-size-small: 12px;
+$font-size-regular: 16px;
+$font-size-large: 24px;
+$font-size-x-large: 32px;
+$font-size-xx-large: 48px;
+$font-size-xxx-large: 64px;
+$font-size-xxxx-large: 96px;
+
+// Font-weights.
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+// Colors.
+
+$black: #000000;
+$white: #FFFFFF;
+$green: #00a99d;
+$light-green: #d9f2f0;
+$orange: #f26621;
+$light-orange: #fde3d7;
+$greyish: #f2f2f2;
+$light-greyish: #f3f3f3;
+$dark-greyish: #cccccc;
+$mild-greyish: #666666;
+$extra-greyish: #999999;
+$cool-greyish: #D9D9DB;
+$super-greyish: #eaeaea;
+$rare-greyish: #aeaeae;
+
+$color-primary: $orange;
+$color-background: $greyish;
+$color-border: $dark-greyish;
+
+// 7. Selection Color in Browser - https://css-tricks.com/almanac/selectors/s/selection/
+
+*::-moz-selection { color: $greyish; background-color: $orange; }
+*::selection { color: $greyish; background-color: $orange; }
+
+// 8. Font Awesome Icon Insertion
+
+@mixin icon-before($content) {
+  &::before {
+    content: $content;
+    margin-right: 10px;
+    font-family: "fontawesome";
+  }
+}

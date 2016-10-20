@@ -1,0 +1,31 @@
+// Universal Links.
+a {
+  text-decoration: none;
+}
+
+// Bootstrap Slider
+.slider-handle.custom {
+  background-image: url('../images/progress-indicator.png') !important;
+  height: 41px;
+  width: 35px;
+  margin-top: -10px;
+  box-shadow: none !important;
+  &::before {
+    content: "" !important;
+  }
+}
+.slider-track {
+  border: 1px solid $rare-greyish !important;
+  background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
+}
+.slider-selection {
+  box-shadow: none !important;
+  border: none !important;
+  background-image: linear-gradient(to bottom, $orange 0, $orange 100%) !important;
+}
+.counter {
+  margin-top: 8px;
+  color: $white;
+  text-align: center;
+  @include font-size(14px);
+}

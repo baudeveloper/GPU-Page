@@ -1,0 +1,15 @@
+// Button Orange
+.btn-orange {
+	transition: .4s all;
+	color: $color-primary;
+	border-color: $color-primary;
+	&:hover, &:active, &:focus {
+		color: $white !important;
+		background-color: $orange !important;
+	}
+}
+
+.btn.disabled {
+	color: $dark-greyish;
+	border-color: $dark-greyish;
+}

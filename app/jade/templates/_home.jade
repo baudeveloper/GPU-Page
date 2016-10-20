@@ -1,0 +1,200 @@
+.container
+	header.row
+		.col-sm-12
+			img(src="images/logo-amd.png", alt="AMD - MxGPUI")
+			span MxGPUI
+	main.row
+		.col-sm-12
+			ul.parent.nav.nav-tabs(role='tablist')
+				li.pull-left.heading
+					img(src="images/icon-server.png", alt="Icon - Server")
+					span Server 02
+				li.pull-left.actions
+					a#dropdownActions.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
+						| Actions
+						i.fa.fa-angle-down(aria-hidden='true')
+					ul.dropdown-menu(aria-labelledby='dropdownActions')
+						li
+							a(href='#') Start 
+						li
+							a(href='#') Pause
+						li
+							a(href='#') Stop
+				li.pull-right.active(role='presentation')
+					a(href='#configure', aria-controls='configure', role='tab', data-toggle='tab') Configure
+				li.pull-right(role='presentation')
+					a(href='#monitor', aria-controls='monitor', role='tab', data-toggle='tab') Monitor				
+			.tab-content
+				#configure.tab-pane.active(role='tabpanel')
+					.holder
+						ul.child.nav.nav-tabs(role='tablist')
+							li(role='presentation')
+								a(href='#vm', aria-controls='vm', role='tab', data-toggle='tab') VM
+							li.active(role='presentation')
+								a(href='#gpu', aria-controls='gpu', role='tab', data-toggle='tab') GPU
+						.tab-content
+							#vm.tab-pane(role='tabpanel')
+								.row.button-group
+									.col-sm-12.text-right
+										button.btn.btn-default.btn-orange(type='button') Auto Assign
+										button.btn.btn-default.disabled(type='button') Apply
+								.row.listings.clearfix
+									.col-sm-12
+										ul.row.list-machines
+											li.col-sm-4
+												.machine
+													.head
+														.tbl-row
+															.tbl-cell.machine-type Virtual Machine
+															.tbl-cell.machine-name SallyBridge01
+													.foot
+														.tbl-row
+															.tbl-cell
+																span.assigned Assigned to GPU
+															.tbl-cell
+																select.selectpicker
+																	option 1
+																		|   
+																		option 2
+																		|   
+																		option No GPU														
+											li.col-sm-4
+												.machine
+													.head
+														.tbl-row
+															.tbl-cell.machine-type Virtual Machine
+															.tbl-cell.machine-name Transformer02
+													.foot
+														.tbl-row
+															.tbl-cell
+																span.assigned Assigned to GPU
+															.tbl-cell
+																select.selectpicker
+																	option 1
+																		|   
+																		option 2
+																		|   
+																		option No GPU	
+											li.col-sm-4
+												.machine
+													.head
+														.tbl-row
+															.tbl-cell.machine-type Virtual Machine
+															.tbl-cell.machine-name JamesBond007
+													.foot
+														.tbl-row
+															.tbl-cell
+																span.assigned Assigned to GPU
+															.tbl-cell
+																select.selectpicker
+																	option 1
+																		|   
+																		option 2
+																		|   
+																		option No GPU	
+										ul.row.list-machines
+											li.col-sm-4
+												.machine
+													.head
+														.tbl-row
+															.tbl-cell.machine-type Virtual Machine
+															.tbl-cell.machine-name Shockwave09
+													.foot
+														.tbl-row
+															.tbl-cell
+																span.assigned Assigned to GPU
+															.tbl-cell
+																select.selectpicker
+																	option 1
+																		|   
+																		option 2
+																		|   
+																		option No GPU	
+											li.col-sm-4
+												.machine
+													.head
+														.tbl-row
+															.tbl-cell.machine-type Virtual Machine
+															.tbl-cell.machine-name Textile08
+													.foot
+														.tbl-row
+															.tbl-cell
+																span.assigned Assigned to GPU
+															.tbl-cell
+																select.selectpicker
+																	option 1
+																		|   
+																		option 2
+																		|   
+																		option No GPU		
+							#gpu.tab-pane.active(role='tabpanel')
+								.row.button-group
+									.col-sm-12.clearfix
+										.slide.pull-left
+											span Partitions:
+											input#parent-partition.partition(type='text', data-slider-handle='custom', data-slider-tooltip="hide", data-slider-min="0", data-slider-max="10", data-slider-step="1", data-slider-value="5")
+										.btns.pull-right
+											button.btn.btn-default.disabled(type='button') Apply
+											button.btn.btn-default.disabled(type='button') Restore
+											button.btn.btn-default.btn-orange(type='button') Refresh						
+								.row.listings.list-gpu
+									.col-sm-12
+										ul.parent-list
+											li
+												.gpu-parent
+													.head
+														img(src="images/icon-gpu.png", alt="Icon - GPU")
+														span GPU 01
+													.foot.clearfix
+														.pull-left
+															span Partitions:
+															input#gpu-partition.partition(type='text', data-slider-handle='custom', data-slider-tooltip="hide", data-slider-min="0", data-slider-max="10", data-slider-step="1", data-slider-value="3")
+														.pull-right
+															button.btn.btn-default.disabled(type='button') Apply
+												ul.child-list
+													li
+														.gpu-child.connected
+															.tbl-row
+																.tbl-cell.gpu-name mxGPU 01																	
+																.tbl-cell.gpu-connection
+																	span Connected to
+																	span VM SallyBridge01
+													li
+														.gpu-child.in-use
+															.tbl-row
+																.tbl-cell.gpu-name mxGPU 02																	
+																.tbl-cell.gpu-connection
+																	span In Use
+																	span VM Transformer02
+													li
+														.gpu-child.in-use
+															.tbl-row
+																.tbl-cell.gpu-name mxGPU 03																	
+																.tbl-cell.gpu-connection
+																	span In Use
+																	span VM JamesBond007
+											li
+												.gpu-parent
+													.head
+														img(src="images/icon-gpu.png", alt="Icon - GPU")
+														span GPU 02
+													.foot.clearfix
+														.pull-left
+															span Partitions:
+															input#gpu2-partition.partition(type='text', data-slider-handle='custom', data-slider-tooltip="hide", data-slider-min="0", data-slider-max="10", data-slider-step="1", data-slider-value="2")
+														.pull-right
+															button.btn.btn-default.disabled(type='button') Apply
+												ul.child-list
+													li
+														.gpu-child.not-connected
+															.tbl-row
+																.tbl-cell.gpu-name mxGPU 01																	
+																.tbl-cell.gpu-connection
+																	span Not Connected
+													li
+														.gpu-child.not-connected
+															.tbl-row
+																.tbl-cell.gpu-name mxGPU 02																	
+																.tbl-cell.gpu-connection
+																	span Not Connected
+				#monitor.tab-pane(role='tabpanel')
