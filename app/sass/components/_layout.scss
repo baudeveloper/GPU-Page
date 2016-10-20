@@ -41,7 +41,7 @@ header {
         line-height: normal;
         color: $color-primary;
         display: inline-block;
-        padding: 8px 15px 12px 8px;
+        padding: 10px 15px 10px 8px;
         vertical-align: middle;
         @include font-size(18px);
       }
@@ -119,8 +119,9 @@ header {
       &.active {
         a {
           color: $color-primary;
+          border-color: $dark-greyish;
+          border-bottom-color: transparent; 
           background-color: $white;
-          border-bottom-color: transparent;
         }
       }
       &:last-child {
