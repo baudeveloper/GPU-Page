@@ -29,3 +29,15 @@ a {
   text-align: center;
   @include font-size(14px);
 }
+// Disabled Slider
+.slider-disabled {
+  .slider-handle.custom {
+    background-image: url('../images/progress-indicator-off.png') !important;
+  }
+  .slider-track {
+    background-image: linear-gradient(to bottom, $greyish 0, $greyish 100%) !important;
+  }
+  .slider-selection {
+    background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
+  }
+}
