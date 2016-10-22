@@ -1,0 +1,456 @@
+// Header Section - Contains AMD Logo and MxGPUI Text.
+#page-intro {
+  margin-top: 30px;
+	margin-bottom: 30px;
+	#branding {
+		font-weight: $font-weight-bold;
+    color: $color-primary;
+    @include font-size(18px);
+		img {
+			margin-right: 20px;
+	    vertical-align: baseline;
+	  }
+	} // #branding
+	#page-navigation {
+		margin-top: 30px;
+		#page-title {
+			margin: 0 20px 0 0;
+			line-height: normal;
+			color: $color-primary;
+			display: inline-block;
+			vertical-align: middle;
+			@include font-size(18px);
+			img {
+				margin-right: 10px;
+				vertical-align: initial;
+			}
+		} // #page-title
+		#action-dropdown {
+			display: inline-block;
+			button {
+        border-radius: 0;
+				padding: 7px 12px 5px;
+        color: $extra-greyish;
+        @include font-size(14px);
+        background-color: transparent;
+        border: 1px solid transparent;
+				font-weight: $font-weight-bold;
+        &:hover, &:focus, &:active {
+          box-shadow: none;
+        }
+      } // button
+      &.open button {
+        background-color: $white;
+      } // .open -> button
+      .dropdown-menu {
+        padding: 0;
+        border: none;
+				margin-top: 1px;
+				border-radius: 0;
+        a {
+          margin: 4px;
+          color: $extra-greyish;
+          padding: 5px 15px 5px 10px;
+          &:hover, &:active, &:focus {
+            color: $orange;
+            border-radius: 4px;
+            background-color: $light-orange;
+          }
+        }
+      } // .dropdown-menu
+		} // #action-dropdown
+		#page-tabs {
+			float: right;
+			border-bottom: none;
+			li {
+				a {
+		      margin: 0;
+		      color: $mild-greyish;
+          padding: 7px 12px 5px;
+		      border: none !important;
+		      @include font-size(14px);
+		    }
+		    &.active {
+		      a {
+		        font-weight: $font-weight-bold;
+		        border: none !important;
+		        border-bottom: 4px solid $color-primary !important;
+		      }
+		    }
+			}
+			@media #{$mobile} {
+				display: block;
+				float: none;
+				clear: both;
+				margin-top: 15px;
+				li {
+					width: 50%;
+					text-align: center;
+				}
+			}
+		} // #page-tabs
+		&::after {
+			content: '';
+		  display: block;
+			border-bottom: 1px solid $dark-greyish;
+		}
+	} // #page-navigation
+} // header
+
+// Main Section - Contains Content.
+main {
+	margin-bottom: 30px;
+	#vm-gpu-component {
+	  border: 1px solid $dark-greyish;
+	  min-height: 270px;
+	  background: url("../images/bg-listings.png") repeat top/contain;
+		.child {
+	    padding-top: 15px;
+			padding-left: 15px;
+	    border-bottom-color: $dark-greyish;
+		  background-color: $cool-greyish;
+	    li {
+	      float: left;
+	      a {
+	        margin: 0;
+	        min-width: 150px;
+	        text-align: center;
+	        color: $mild-greyish;
+	        border-color: $dark-greyish;
+          font-weight: $font-weight-bold;
+	        background-color: $light-greyish;
+          @media #{$mobile} {
+            min-width: 80px;
+          }
+	      }
+	      &.active {
+	        a {
+	          color: $color-primary;
+	          background-color: $white;
+	          border-color: $dark-greyish;
+            border-bottom-color: $white;
+	        }
+	      }
+	    }
+			li:last-child a {
+				border-left: none;
+			}
+		} // .child
+		#vm-header {
+			text-align: right;
+			padding: 30px 15px;
+			background-color: $white;
+			button {
+				min-width: 165px;
+				margin-left: 15px;
+				padding: 10px 40px;
+				text-transform: uppercase;
+				@media #{$mobile} {
+					min-width: auto;
+					padding: 10px 20px;
+				}
+				&:not(.disabled) {
+					@extend .btn-orange;
+				}
+			} // button
+		} // #vm-header
+		#gpu-header {
+			padding: 30px 15px;
+			background-color: $white;
+			.slide {
+				float: left;
+				margin-top: 10px;
+				span {
+					color: $black;
+					font-weight: $font-weight-bold;
+					margin: 0 5px 0 0;
+					@include font-size(14px);
+				} // Partitions.
+				.slider {
+					width: 290px;
+					@media #{$desktop} {
+						width: 250px;
+					}
+          @media #{$mobile} {
+            width: 200px;
+          }
+				} // Slider.
+				.off {
+					width: auto;
+					display: block;
+					margin-top: 35px;
+					font-weight: $font-weight-bold;
+					text-align: center;
+					color: $extra-greyish;
+					@include font-size(9px);
+					text-transform: uppercase;
+				} // Disabled state.
+			} // .slide
+			.pane-actions {
+				float: right;
+		    button {
+		      min-width: 165px;
+		      margin-left: 15px;
+		      padding: 10px 40px;
+		      text-transform: uppercase;
+		      @media #{$mobile} {
+		        min-width: auto;
+		        padding: 10px;
+		      }
+		      &:not(.disabled) {
+		        @extend .btn-orange;
+		      }
+		    } // button
+				@media #{$tablet} {
+					float: none;
+					clear: both;
+					display: block;
+					margin-left: -15px;
+					margin-top: 80px;
+				}
+        @media #{$mobile} {
+					margin-top: 90px;
+				}
+		  } // .pane-actions
+		} // #vm-header
+		#vm-listing {
+			min-height: 270px;
+			padding: 30px 15px;
+		  background: url("../images/bg-listings.png") repeat top/contain;
+			> ul {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				> li {
+					margin-bottom: 30px;
+					list-style-type: none;
+				}
+        .machine-header {
+					width: 100%;
+					display: table;
+          padding: 10px 15px;
+          border-radius: 4px 4px 0 0;
+          font-weight: $font-weight-bold;
+          background-color: $light-orange;
+					border: 1px solid $color-primary;
+					box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.25);
+					-moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.25);
+					-webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.25);
+          > span {
+						display: table-cell;
+            line-height: normal;
+            color: $color-primary;
+            @include font-size(10px);
+            text-transform: uppercase;
+          }
+          > h2 {
+						margin: 0;
+						padding: 0;
+            text-align: right;
+            line-height: normal;
+						display: table-cell;
+            color: $color-primary;
+            @include font-size(14px);
+          }
+        } // .machine-header
+        .machine-action {
+					width: 100%;
+					display: table;
+					background-color: $white;
+					border-radius: 0 0 4px 4px;
+					border: 1px solid $color-primary;
+					border-top: none;
+					box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.25);
+					-moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.25);
+					-webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.25);
+          > span {
+						width: 50%;
+            padding: 10px 15px;
+						display: table-cell;
+            color: $color-primary;
+            @include font-size(14px);
+						border-right: 1px solid $color-primary;
+            strong {
+              font-weight: $font-weight-bold;
+            }
+          }
+        }
+			} // .machine-action
+		} // #vm-listing
+		#gpu-listing {
+		  @media #{$mobile} {
+		    overflow: scroll;
+		  }
+		  @media #{$tablet} {
+		    overflow: scroll;
+		  }
+      // Tree Structure - Source: http://codepen.io/tpkahlon/pen/zKymPk
+		  .node-parent {
+        margin: 0 0 0 175px;
+		    padding: 0;
+		    padding-bottom: 30px;
+        position: relative;
+        > li {
+          padding-top: 30px !important;
+          position: relative;
+          list-style: none;
+          padding-left: 70px;
+          &::after {
+            content: "";
+            position: absolute;
+            left: -10px;
+            border-left: 2px solid #000;
+            height: 100%;
+            width: 0px;
+            top: 0px;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            left: -10px;
+            border-top: 2px solid #000;
+            top: 85px;
+            width: 80px;
+            height: 0;
+          }
+          &:last-child {
+            &::after {
+              height: 85px;
+            }
+          } // Tree Structure styles for first/parent node items (Usually has more gap/width)
+          li {
+						padding-top: 15px !important;
+            position: relative;
+            list-style: none;
+            padding-left: 45px;
+            &::after {
+              content: "";
+              position: absolute;
+              left: -10px;
+              border-left: 2px solid #000;
+              height: 100%;
+              width: 0px;
+              top: 0px;
+            }
+            &::before {
+              content: "";
+              position: absolute;
+              left: -10px;
+              border-top: 2px solid #000;
+              top: 50px;
+              width: 55px;
+              height: 0;
+            }
+            &:last-child {
+              &::after {
+                height: 50px;
+              }
+            }
+					} // Tree Structure styles for second/child node items (Usually has less gap/width)
+        }
+        // Tree structure
+		    &:last-child {
+		      .gpu-node {
+            &:last-child {
+              margin-bottom: 30px;
+            }
+		      }
+		    } // Add margin to very last item of tree.
+		  } // .node-parent
+		  .partition-action {
+		    width: 540px;
+		    min-height: 110px;
+        height: auto;
+		    padding: 15px;
+		    position: relative;
+		    border-radius: 4px;
+		    background-color: $white;
+		    -webkit-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
+		    -moz-box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
+		    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.5);
+        @include clearfix();
+				img {
+					margin-right: 10px;
+				} // img
+		    h2 {
+          display: inline-block;
+					margin: 0 0 5px;
+					padding: 0;
+		      font-weight: $font-weight-bold;
+		      color: $color-primary;
+		      @include font-size(20px);
+		    } // h2
+		    button {
+					float: right;
+		      padding: 10px 30px;
+		      text-transform: uppercase;
+		    } // button
+				.slide {
+					float: left;
+					margin-top: 10px;
+					display: inline-block;
+					span {
+						color: $black;
+						font-weight: $font-weight-bold;
+						margin: 0 5px 0 0;
+						@include font-size(14px);
+					} // Partitions.
+				} // .slide
+		  } // .partition-action
+		  .panel-child {
+		    width: 455px;
+		    min-height: 70px;
+        height: auto;
+		    padding: 15px;
+		    position: relative;
+		    border-radius: 4px;
+        @include clearfix();
+        font-weight: $font-weight-bold;
+		    &.connected {
+					color: $color-primary;
+					vertical-align: bottom;
+		      border: 1px solid $color-primary;
+		      background-color: $light-orange;
+		    } // .connected
+		    &.in-use {
+					color: $green;
+		      border: 1px solid $green;
+		      background-color: $light-green;
+		    } // .in-use
+		    &.not-connected {
+					color: $extra-greyish;
+		      border: 1px solid $extra-greyish;
+		      background-color: $super-greyish;
+					&:last-child {
+						vertical-align: top !important;
+					}
+		    } // .not-connected
+				.mxgpu-status {
+          word-break: break-all;
+					display: block;
+					text-align: right;
+					margin-bottom: 5px;
+					@include font-size(9px);
+					text-transform: uppercase;
+				} // .mxgpu-status
+		    .gpu-name {
+          word-break: break-all;
+          max-width: 150px;
+          float: left;
+		      line-height: 18px;
+					display: inline-block;
+		      @include font-size(12px);
+		    } // .gpu-name
+		    .vm-name {
+          word-break: break-all;
+          max-width: 150px;
+          float: right;
+		      text-align: right;
+		      line-height: 18px;
+					display: inline-block;
+		      @include font-size(16px);
+		    } // .vm-name
+		  } // .panel-child
+		} // #gpu-listing
+	} // #vm-gpu-component
+} // main

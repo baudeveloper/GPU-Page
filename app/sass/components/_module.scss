@@ -1,3 +1,8 @@
+// Button
+.btn {
+	font-weight: $font-weight-bold;
+}
+
 // Button Orange
 .btn-orange {
 	transition: .4s all;
@@ -9,6 +14,7 @@
 	}
 }
 
+// Button Disabled
 .btn.disabled {
 	color: $dark-greyish;
 	border-color: $dark-greyish;

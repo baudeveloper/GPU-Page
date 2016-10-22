@@ -1,4 +1,4 @@
-// Universal Links.
+// Universal Links
 a {
   text-decoration: none;
 }
@@ -39,5 +39,61 @@ a {
   }
   .slider-selection {
     background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
+  }
+}
+
+// Bootstrap Select
+.bootstrap-select {
+  height: 40px;
+  position: relative;
+  width: 100% !important;
+  button {
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border: none !important;
+    @include font-size(20px);
+    box-shadow: none !important;
+    position: absolute !important;
+    color: $color-primary !important;
+    background-color: transparent !important;
+    .filter-option {
+      font-weight: 500;
+    }
+    &.dropdown-toggle {
+      &:active, &:hover, &:focus {
+        border: none !important;
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+  .dropdown-menu {
+    padding: 0;
+    margin: -2px 0 0;
+    border: none !important;
+    border-radius: 0 0 4px 4px;
+    -webkit-box-shadow: 1px 10px 5px 5px rgba(0,0,0,0.25);
+    -moz-box-shadow: 1px 10px 5px 5px rgba(0,0,0,0.25);
+    box-shadow: 1px 10px 5px 5px rgba(0,0,0,0.25);
+    a {
+      margin: 4px;
+      border-radius: 0;
+      padding-left: 10px;
+      @include font-size(16px);
+      color: $extra-greyish;
+      &:hover, &:focus, &:active {
+        border-radius: 4px;
+        color: $color-primary;
+        outline: none !important;
+        background-color: $light-orange;
+      }
+    }
+    .selected {
+      a {
+        color: $color-primary;
+      }
+    }
   }
 }

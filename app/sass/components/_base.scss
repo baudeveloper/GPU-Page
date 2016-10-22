@@ -18,56 +18,14 @@ $desktop: "only screen and (max-width: $screen-md-max)";
   font-size: calculateRem($size);
 }
 
-// 3. Transitions
-
-@mixin transition($args...) {
-  -webkit-transition: $args;
-  -moz-transition: $args;
-  -ms-transition: $args;
-  -o-transition: $args;
-  transition: $args;
-}
-
-// 4. Cross Browser Opacity
-
-@mixin opacity($opacity) {
-  opacity: $opacity;
-  $opacity-ie: $opacity * 100;
-  filter: alpha(opacity=$opacity-ie); //IE8
-}
-
-// 5. Visually Hidden
-
-@mixin visuallyhidden() {
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
-}
-
-// 6. Variables
-
-// Font-sizes.
-
-$font-size-small: 12px;
-$font-size-regular: 16px;
-$font-size-large: 24px;
-$font-size-x-large: 32px;
-$font-size-xx-large: 48px;
-$font-size-xxx-large: 64px;
-$font-size-xxxx-large: 96px;
+// 3. Variables
 
 // Font-weights.
 
-$font-weight-light: 300;
-$font-weight-regular: 400;
-$font-weight-bold: 600;
+$font-weight-bold: 500;
+$font-weight-extra-bold: 500;
 
-// Colors.
+// 4. Colors.
 
 $black: #000000;
 $white: #FFFFFF;
@@ -88,17 +46,7 @@ $color-primary: $orange;
 $color-background: $greyish;
 $color-border: $dark-greyish;
 
-// 7. Selection Color in Browser - https://css-tricks.com/almanac/selectors/s/selection/
+// 5. Selection Color in Browser - https://css-tricks.com/almanac/selectors/s/selection/
 
 *::-moz-selection { color: $greyish; background-color: $orange; }
 *::selection { color: $greyish; background-color: $orange; }
-
-// 8. Font Awesome Icon Insertion
-
-@mixin icon-before($content) {
-  &::before {
-    content: $content;
-    margin-right: 10px;
-    font-family: "fontawesome";
-  }
-}
