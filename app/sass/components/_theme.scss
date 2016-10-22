@@ -101,6 +101,7 @@
 main {
 	margin-bottom: 30px;
 	#vm-gpu-component {
+    overflow: hidden;
 	  border: 1px solid $dark-greyish;
 	  min-height: 270px;
 	  background: url("../images/bg-listings.png") repeat top/contain;
@@ -286,7 +287,8 @@ main {
 		  }
       // Tree Structure - Source: http://codepen.io/tpkahlon/pen/zKymPk
 		  .node-parent {
-        margin: 0 0 0 175px;
+        width: 100%;
+        margin: 0 175px;
 		    padding: 0;
 		    padding-bottom: 30px;
         position: relative;
