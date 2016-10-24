@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>AMD MxGPUI</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="images/master_picture.png">
+    <link rel="stylesheet" href="css/style.css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap-select.min.css" media="screen">
+    <link rel="stylesheet" href="css/bootstrap-slider.min.css" media="screen">
+    <script src="js/modernizr.min.js"></script>
+    <!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><script src="js/respond.min.js"></script><![endif]-->
+  </head>
+
+  <body>
+    <div class="container">
+      <header id="page-intro">
+        <section id="branding">
+          <img src="images/logo-amd.png" alt="AMD - MxGPUI">MxGPUI</section>
+        <!-- #branding-->
+        <section id="page-navigation">
+          <h1 id="page-title">
+            <img src="images/icon-server.png" alt="Server Icon"> Server 02</h1>
+          <!-- #page-title-->
+          <div id="action-dropdown" class="dropdown">
+            <button id="dropdownMenu1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-default dropdown-toggle">Actions
+              <i aria-hidden="true" class="fa fa-angle-down"></i>
+            </button>
+            <ul aria-labelledby="dropdownMenu1" class="dropdown-menu">
+              <li>
+                <a href="#">Start</a>
+              </li>
+              <li>
+                <a href="#">Pause</a>
+              </li>
+              <li>
+                <a href="#">Stop</a>
+              </li>
+            </ul>
+          </div>
+          <!-- #action-dropdown-->
+          <ul id="page-tabs" role="tablist" class="parent nav nav-tabs">
+            <li role="presentation">
+              <a href="#monitor" aria-controls="monitor" role="tab" data-toggle="tab">Monitor </a>
+            </li>
+            <li role="presentation" class="active">
+              <a href="#configure" aria-controls="configure" role="tab" data-toggle="tab">Configure</a>
+            </li>
+          </ul>
+          <!-- #page-tabs-->
+        </section>
+        <!-- #page-navigation-->
+      </header>
+      <!-- header-->
+      <main>
+        <div class="tab-content">
+          <div id="monitor" role="tabpanel" class="tab-pane"></div>
+          <!-- #monitor-->
+          <div id="configure" role="tabpanel" class="tab-pane active">
+            <div class="column">
+              <div id="vm-gpu-component">
+                <section class="component-header">
+                  <ul role="tablist" class="child nav nav-tabs">
+                    <li role="presentation" class="active">
+                      <a href="#vm" aria-controls="vm" role="tab" data-toggle="tab">VM</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#gpu" aria-controls="gpu" role="tab" data-toggle="tab">GPU</a>
+                    </li>
+                  </ul>
+                  <!-- .child-->
+                </section>
+                <!-- .component-header-->
+                <section class="component-content">
+                  <div class="tab-content">
+                    <div id="vm" role="tabpanel" class="tab-pane active">
+                      <header id="vm-header">
+                        <div class="pane-actions">
+                          <button type="button" class="btn btn-default">Auto Assign</button>
+                          <button type="button" class="btn btn-default disabled">Apply</button>
+                        </div>
+                        <!-- .pane-actions-->
+                      </header>
+                      <!-- header#vm-header		-->
+                      <section id="vm-listing">
+                        <ul>
+                          <li id="SallyBridge01">
+                            <div class="machine-header">
+                              <span>Virtual Machine</span>
+                              <h2>SallyBridge01</h2>
+                            </div>
+                            <div class="machine-action">
+                              <span>Assigned to
+                                <strong>GPU</strong>
+                              </span>
+                              <select class="selectpicker">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>No GPU</option>
+                              </select>
+                            </div>
+                          </li>
+                          <!-- end of #SallyBridge01-->
+                          <li id="Transformer02">
+                            <div class="machine-header">
+                              <span>Virtual Machine</span>
+                              <h2>Transformer02</h2>
+                            </div>
+                            <div class="machine-action">
+                              <span>Assigned to
+                                <strong>GPU</strong>
+                              </span>
+                              <select class="selectpicker">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>No GPU</option>
+                              </select>
+                            </div>
+                          </li>
+                          <!-- end of #Transformer0-->
+                          <li id="JamesBod007">
+                            <div class="machine-header">
+                              <span>Virtual Machine</span>
+                              <h2>Transformer02</h2>
+                            </div>
+                            <div class="machine-action">
+                              <span>Assigned to
+                                <strong>GPU</strong>
+                              </span>
+                              <select class="selectpicker">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>No GPU</option>
+                              </select>
+                            </div>
+                          </li>
+                          <!-- end of #JamesBod007-->
+                          <li id="Shockwave09">
+                            <div class="machine-header">
+                              <span>Virtual Machine</span>
+                              <h2>Shockwave09</h2>
+                            </div>
+                            <div class="machine-action">
+                              <span>Assigned to
+                                <strong>GPU</strong>
+                              </span>
+                              <select class="selectpicker">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>No GPU</option>
+                              </select>
+                            </div>
+                          </li>
+                          <!-- end of #Shockwave09-->
+                          <li id="Textile08">
+                            <div class="machine-header">
+                              <span>Virtual Machine</span>
+                              <h2>Textile08</h2>
+                            </div>
+                            <div class="machine-action">
+                              <span>Assigned to
+                                <strong>GPU</strong>
+                              </span>
+                              <select class="selectpicker">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>No GPU</option>
+                              </select>
+                            </div>
+                          </li>
+                          <!-- end of #Textile08-->
+                        </ul>
+                        <!-- ul-->
+                      </section>
+                      <!-- section#vm-listing-->
+                    </div>
+                    <div id="gpu" role="tabpanel" class="tab-pane">
+                      <header id="gpu-header">
+                        <div id="primary-slider" class="slide">
+                          <span>Partitions:</span>
+                          <input id="parent-partition" type="text" data-slider-handle="custom" data-slider-tooltip="hide" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="5" data-slider-enabled="false"
+                            class="partition">
+                        </div>
+                        <!-- #primary-slider-->
+                        <div class="pane-actions">
+                          <button type="button" class="btn btn-default disabled">Apply</button>
+                          <button type="button" class="btn btn-default disabled">Restore</button>
+                          <button type="button" class="btn btn-default">Refresh </button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!-- .pane-actions-->
+                      </header>
+                      <!-- #gpu-header-->
+                      <section id="gpu-listing">
+                        <ul class="node-parent">
+                          <li id="gpu01" class="gpu-node">
+                            <div class="partition-action">
+                              <h2>
+                                <img src="images/icon-gpu.png" alt="GPU Icon">GPU 01</h2>
+                              <br class="clearfix">
+                              <div class="slide">
+                                <span>Partitions:</span>
+                                <input id="gpu-partition" type="text" data-slider-handle="custom" data-slider-tooltip="hide" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="3" class="partition">
+                              </div>
+                              <button type="button" class="btn btn-default disabled">Apply</button>
+                            </div>
+                            <ul class="node-children">
+                              <li id="mxgpu01">
+                                <div class="panel-child connected">
+                                  <span class="mxgpu-status">Connected to</span>
+                                  <span class="gpu-name">mxGPU 01</span>
+                                  <span class="vm-name">VM SallyBridge01</span>
+                                </div>
+                              </li>
+                              <!-- #mxgpu01-->
+                              <li id="mxgpu02">
+                                <div class="panel-child in-use">
+                                  <span class="mxgpu-status">In Use</span>
+                                  <span class="gpu-name">mxGPU 02</span>
+                                  <span class="vm-name">VM Transformer02</span>
+                                </div>
+                              </li>
+                              <!-- #mxgpu02-->
+                              <li id="mxgpu03">
+                                <div class="panel-child in-use">
+                                  <span class="mxgpu-status">In Use</span>
+                                  <span class="gpu-name">mxGPU 03</span>
+                                  <span class="vm-name">VM JamesBond007</span>
+                                </div>
+                              </li>
+                              <!-- #mxgpu03-->
+                            </ul>
+                            <!-- .node-children-->
+                          </li>
+                          <!-- #gpu01-->
+                          <li id="gpu02" class="gpu-node">
+                            <div class="partition-action">
+                              <h2>
+                                <img src="images/icon-gpu.png" alt="GPU Icon">GPU 02</h2>
+                              <br class="clearfix">
+                              <div class="slide">
+                                <span>Partitions:</span>
+                                <input id="gpu2-partition" type="text" data-slider-handle="custom" data-slider-tooltip="hide" data-slider-min="0" data-slider-max="10" data-slider-step="1" data-slider-value="2" class="partition">
+                              </div>
+                              <button type="button" class="btn btn-default disabled">Apply</button>
+                            </div>
+                            <!-- .partition-action-->
+                            <ul class="node-children">
+                              <li id="mxgpu04">
+                                <div class="panel-child not-connected">
+                                  <span class="mxgpu-status">Not Connected</span>
+                                  <span class="gpu-name">mxGPU 04</span>
+                                  <span class="vm-name"></span>
+                                </div>
+                              </li>
+                              <!-- #mxgpu04-->
+                              <li id="mxgpu05">
+                                <div class="panel-child not-connected">
+                                  <span class="mxgpu-status">Not Connected</span>
+                                  <span class="gpu-name">mxGPU 05</span>
+                                  <span class="vm-name"></span>
+                                </div>
+                              </li>
+                              <!-- #mxgpu05-->
+                            </ul>
+                            <!-- .node-children-->
+                          </li>
+                          <!-- #gpu02-->
+                        </ul>
+                        <!-- .node-parent-->
+                      </section>
+                      <!-- #gpu-listing-->
+                    </div>
+                    <!-- #gpu-->
+                  </div>
+                </section>
+                <!-- .component-content-->
+              </div>
+              <!-- #vm-gpu-component-->
+            </div>
+            <!-- .column-->
+          </div>
+          <!-- #configure-->
+        </div>
+        <!-- .tab-content-->
+      </main>
+      <!-- main-->
+    </div>
+  </body>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap-select.min.js"></script>
+  <script src="js/bootstrap-slider.min.js"></script>
+  <script src="js/custom.js"></script>
+
+</html>

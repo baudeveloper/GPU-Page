@@ -20,35 +20,14 @@ var gulp = require('gulp'),
         lazy: true
     });
 
-// gulp.task('google-fonts', function() {
-//     return gulp.src('./fonts.list')
-//         .pipe(googleWebFonts(options))
-//         .pipe(gulp.dest(config.dist + '/fonts'));
-// });
-
 gulp.task('premium-fonts', function() {
     return gulp.src('./app/font/**/*.*')
         .pipe(gulp.dest(config.dist + '/fonts'));
-});``
+});
 
-gulp.task('jade', function() {
-    log('Generating HTML files with Jade.');
-    return gulp.src(config.jade)
-        .pipe($.jade())
-        .on('error', $.notify.onError(function (error) {
-          return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
-        }))
-        .pipe($.prettify({ indent_size: 2, unformatted: ['pre', 'code'] }))
-        .pipe($.bootlint())
-        .pipe($.size({title: '************ FILE SIZE: HTMLs ****'}))
-        .pipe(gulp.dest(config.dist))
-        .pipe($.notify({
-            title: 'Gulp',
-            subtitle: 'Success.',
-            message: 'HTML files successfully complied.',
-            sound: "Pop"
-        }))
-        .on('finish', browserSync.reload);
+gulp.task('html', ['clean-html'], function() {
+    return gulp.src('./app/*.html')
+        .pipe(gulp.dest(config.dist));
 });
 
 gulp.task('sass', ['clean-sass', 'vendor-styles'], function() {
@@ -87,7 +66,7 @@ gulp.task('sass', ['clean-sass', 'vendor-styles'], function() {
 gulp.task('vendor-styles', function() {
     log('Copying Vendor CSS files.');
     return gulp.src(config.vendorCSS)
-        .pipe(concatCss('vendor.css'))
+        // .pipe(concatCss('vendor.css'))
         .pipe($.size({title: '************ FILE SIZE: Vendor Style (before) ****'}))
         .pipe($.if(argv.production, cleanCSS({compatibility: 'ie7'})))
         .pipe($.if(argv.production, $.cssnano()))
@@ -104,14 +83,14 @@ gulp.task('vendor-styles', function() {
 
 gulp.task('scripts', ['clean-scripts', 'vendor-scripts'], function() {
     log('Generating script with Concat and Uglify.');
-    return gulp.src(config.scripts)
+    return gulp.src(config.script)
         .pipe($.plumber({
             errorHandler: onError
         }))
-        .pipe($.newer(config.dist + '/js'))
+        // .pipe($.newer(config.dist + '/js'))
         // .pipe($.sourcemaps.init())
         // .pipe($.sourcemaps.write())
-        .pipe($.concat('script.js'))
+        // .pipe($.concat('script.js'))
         .pipe($.size({title: '************ FILE SIZE: Scripts (before) ****'}))
         // .pipe($.if(argv.production, stripDebug()))
         .pipe($.if(argv.production, $.uglify()))
@@ -128,8 +107,8 @@ gulp.task('scripts', ['clean-scripts', 'vendor-scripts'], function() {
 });
 
 gulp.task('vendor-scripts', function() {
-    log('Copying Vendor JS files.');
-    return gulp.src(config.vendorJS)
+    log('Copying JS files.');
+    return gulp.src(config.scripts)
         .pipe($.size({title: '************ FILE SIZE: Vendor Scripts ****'}))
         .pipe(gulp.dest(config.dist + '/js'))
         .pipe($.notify({
@@ -172,71 +151,75 @@ gulp.task('fonts', ['clean-fonts'], function() {
         }));
 });
 
-gulp.task('generate-favicon', function(done) {
-    realFavicon.generateFavicon({
-        masterPicture: 'app/images/master_picture.png',
-        dest: 'dist/images/icons',
-        iconsPath: '/',
-        design: {
-            ios: {
-                pictureAspect: 'backgroundAndMargin',
-                backgroundColor: '#ffffff',
-                margin: '25%',
-                appName: 'Test'
-            },
-            desktopBrowser: {},
-            windows: {
-                pictureAspect: 'whiteSilhouette',
-                backgroundColor: '#43BCCD',
-                onConflict: 'override',
-                appName: 'Test'
-            },
-            androidChrome: {
-                pictureAspect: 'noChange',
-                themeColor: '#ffffff',
-                manifest: {
-                    name: 'Test',
-                    display: 'browser',
-                    orientation: 'notSet',
-                    onConflict: 'override',
-                    declared: true
-                }
-            },
-            safariPinnedTab: {
-                pictureAspect: 'silhouette',
-                themeColor: '#43BCCD'
-            }
-        },
-        settings: {
-            compression: 3,
-            scalingAlgorithm: 'Mitchell',
-            errorOnImageTooSmall: false
-        },
-        versioning: {
-            paramName: 'v',
-            paramValue: 'kPPybMdXj4'
-        },
-        markupFile: FAVICON_DATA_FILE
-    }, function() {
-        done();
-    });
-});
+// gulp.task('generate-favicon', function(done) {
+//     realFavicon.generateFavicon({
+//         masterPicture: './app/images/master_picture.png',
+//         dest: './dist/images/icons',
+//         iconsPath: '/',
+//         design: {
+//             ios: {
+//                 pictureAspect: 'backgroundAndMargin',
+//                 backgroundColor: '#ffffff',
+//                 margin: '25%',
+//                 appName: 'Test'
+//             },
+//             desktopBrowser: {},
+//             windows: {
+//                 pictureAspect: 'whiteSilhouette',
+//                 backgroundColor: '#43BCCD',
+//                 onConflict: 'override',
+//                 appName: 'Test'
+//             },
+//             androidChrome: {
+//                 pictureAspect: 'noChange',
+//                 themeColor: '#ffffff',
+//                 manifest: {
+//                     name: 'Test',
+//                     display: 'browser',
+//                     orientation: 'notSet',
+//                     onConflict: 'override',
+//                     declared: true
+//                 }
+//             },
+//             safariPinnedTab: {
+//                 pictureAspect: 'silhouette',
+//                 themeColor: '#43BCCD'
+//             }
+//         },
+//         settings: {
+//             compression: 3,
+//             scalingAlgorithm: 'Mitchell',
+//             errorOnImageTooSmall: false
+//         },
+//         versioning: {
+//             paramName: 'v',
+//             paramValue: 'kPPybMdXj4'
+//         },
+//         markupFile: FAVICON_DATA_FILE
+//     }, function() {
+//         done();
+//     });
+// });
+//
+// gulp.task('inject-favicon-markups', function() {
+//     gulp.src(['dist/*.html'])
+//         .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
+//         .pipe(gulp.dest('dist'));
+// });
+//
+// gulp.task('check-for-favicon-update', function(done) {
+//     var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
+//     realFavicon.checkForUpdates(currentVersion, function(err) {
+//         if (err) {
+//             throw err;
+//         }
+//     });
+// });
 
-gulp.task('inject-favicon-markups', function() {
-    gulp.src(['dist/*.html'])
-        .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
-        .pipe(gulp.dest('dist'));
+gulp.task('clean-html', function() {
+    var files = config.dist + '/*.html';
+    clean(files);
 });
-
-gulp.task('check-for-favicon-update', function(done) {
-    var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
-    realFavicon.checkForUpdates(currentVersion, function(err) {
-        if (err) {
-            throw err;
-        }
-    });
-});
-
 gulp.task('clean-images', function() {
     var files = config.dist + '/images';
     clean(files);
@@ -259,7 +242,7 @@ gulp.task('clean-fonts', function() {
 });
 
 gulp.task('build', function(cb) {
-    runSequence('clean-dist', 'jade', 'fonts', 'sass', 'scripts', 'images', 'premium-fonts', cb);
+    runSequence('clean-dist', 'html', 'fonts', 'sass', 'scripts', 'images', 'premium-fonts', cb);
 });
 
 gulp.task('default', ['build'], function() {
@@ -277,7 +260,7 @@ gulp.task('default', ['build'], function() {
     gulp.watch(config.fonts, ['fonts', browserSync.reload]);
     gulp.watch(config.scripts, ['scripts']);
     gulp.watch(config.images, ['images', browserSync.reload]);
-    gulp.watch(config.jadeAll, ['jade']);
+    gulp.watch(config.html, ['html', browserSync.reload]);
 });
 
 // Log Function.
