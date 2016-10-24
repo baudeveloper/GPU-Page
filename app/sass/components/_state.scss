@@ -37,9 +37,6 @@ a {
 }
 // Disabled Slider
 .slider-disabled {
-  .slider-handle.custom {
-    background-image: url('../images/progress-indicator-off.png') !important;
-  }
   .slider-track {
     background-image: none !important;
     background-color: $greyish !important;
@@ -51,6 +48,10 @@ a {
     background-color: $dark-greyish !important;
     filter: none !important; // IE 9 Fix
     // background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
+  }
+  .slider-handle.custom {
+    filter: none !important; // IE 9 Fix
+    background-image: url('../images/progress-indicator-off.png') !important;
   }
 }
 
