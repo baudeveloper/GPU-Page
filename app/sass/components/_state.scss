@@ -16,12 +16,16 @@ a {
 }
 .slider-track {
   border: 1px solid $rare-greyish !important;
-  background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
+  background-image: none !important;
+  background-color: $dark-greyish !important; // IE 9 Fix
+  // background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
 }
 .slider-selection {
   box-shadow: none !important;
   border: none !important;
-  background-image: linear-gradient(to bottom, $orange 0, $orange 100%) !important;
+  background-image: none !important;
+  background-color: $orange !important; // IE 9 Fix
+  // background-image: linear-gradient(to bottom, $orange 0, $orange 100%) !important;
 }
 .counter {
   margin-top: 8px;
@@ -35,10 +39,14 @@ a {
     background-image: url('../images/progress-indicator-off.png') !important;
   }
   .slider-track {
-    background-image: linear-gradient(to bottom, $greyish 0, $greyish 100%) !important;
+    background-image: none !important;
+    background-color: $greyish !important; // IE 9 Fix
+    // background-image: linear-gradient(to bottom, $greyish 0, $greyish 100%) !important;
   }
   .slider-selection {
-    background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
+    background-image: none !important;
+    background-color: $dark-greyish !important; // IE 9 Fix
+    // background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
   }
 }
 
