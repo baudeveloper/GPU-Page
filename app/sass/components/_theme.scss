@@ -209,6 +209,13 @@ main {
 					margin-left: -15px;
 					margin-top: 80px;
 				}
+        @media #{$desktop} {
+					float: none;
+					clear: both;
+					display: block;
+					margin-left: -15px;
+					margin-top: 80px;
+				}
         // @media #{$mobile} {
 				// 	margin-top: 90px;
 				// }
@@ -279,12 +286,6 @@ main {
 			} // .machine-action
 		} // #vm-listing
 		#gpu-listing {
-		  // @media #{$mobile} {
-		  //   overflow: scroll;
-		  // }
-		  @media #{$tablet} {
-		    overflow: scroll;
-		  }
       // Tree Structure - Source: http://codepen.io/tpkahlon/pen/zKymPk
 		  .node-parent {
         width: 100%;
@@ -292,6 +293,9 @@ main {
 		    padding: 0;
 		    padding-bottom: 30px;
         position: relative;
+        @media #{$tablet} {
+          margin: 0 60px;
+        }
         > li {
           padding-top: 30px !important;
           position: relative;
