@@ -259,6 +259,7 @@ main {
 			} // .machine-action
 		} // #vm-listing
 		#gpu-listing {
+      overflow: hidden;
       // Tree Structure - Source: http://codepen.io/tpkahlon/pen/zKymPk
 		  .node-parent {
         width: 100%;
