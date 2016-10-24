@@ -2,8 +2,12 @@
 html, body {
   font-size: 100%;
   background-color: $color-background;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing:antialiased; /* Antialiased font for great smoothing */
+  -moz-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -o-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility; /* Optimise legibility for some CSS3 kerning */
 }
 
 // Bootstrap's Container Declaration.

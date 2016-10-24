@@ -1,6 +1,14 @@
 // Button
 .btn {
+	outline: none !important;
 	font-weight: $font-weight-bold;
+	&.disabled {
+		color: $dark-greyish;
+		border-color: $dark-greyish;
+		&:hover, &:active, &:hover {
+			color: $dark-greyish !important;
+		}
+	}
 }
 
 // Button Orange
@@ -12,10 +20,4 @@
 		color: $white !important;
 		background-color: $orange !important;
 	}
-}
-
-// Button Disabled
-.btn.disabled {
-	color: $dark-greyish;
-	border-color: $dark-greyish;
 }
