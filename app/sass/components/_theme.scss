@@ -185,13 +185,6 @@ main {
 					margin-left: -15px;
 					margin-top: 80px;
 				}
-        @media #{$desktop} {
-					float: none;
-					clear: both;
-					display: block;
-					margin-left: -15px;
-					margin-top: 80px;
-				}
 		  } // .pane-actions
 		} // #vm-header
 		#vm-listing {
