@@ -49,9 +49,11 @@ a {
     filter: none !important; // IE 9 Fix
     // background-image: linear-gradient(to bottom, $dark-greyish 0, $dark-greyish 100%) !important;
   }
-  .slider-handle.custom {
+  .slider-handle {
     filter: none !important; // IE 9 Fix
-    background-image: url('../images/progress-indicator-off.png') !important;
+    &.custom {
+      background-image: url('../images/progress-indicator-off.png') !important;
+    }
   }
 }
 
