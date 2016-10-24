@@ -214,6 +214,10 @@ gulp.task('fonts', ['clean-fonts'], function() {
 //     });
 // });
 
+gulp.task('clean-bootstrap', function() {
+    var files = config.app + '/sass/_bootstrap.scss';
+    clean(files);
+});
 gulp.task('clean-html', function() {
     var files = config.dist + '/*.html';
     clean(files);

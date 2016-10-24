@@ -69,6 +69,7 @@
           padding: 7px 12px 5px;
 		      border: none !important;
 		      @include font-size(14px);
+          background-color: transparent;
 		    }
 		    &.active {
 		      a {
@@ -78,16 +79,6 @@
 		      }
 		    }
 			}
-			// @media #{$mobile} {
-			// 	display: block;
-			// 	float: none;
-			// 	clear: both;
-			// 	margin-top: 15px;
-			// 	li {
-			// 		width: 50%;
-			// 		text-align: center;
-			// 	}
-			// }
 		} // #page-tabs
 		&::after {
 			content: '';
@@ -101,7 +92,6 @@
 main {
 	margin-bottom: 30px;
 	#vm-gpu-component {
-    overflow: hidden;
 	  border: 1px solid $dark-greyish;
 	  min-height: 270px;
 	  background: url("../images/bg-listings.png") repeat top/contain;
@@ -120,9 +110,6 @@ main {
 	        border-color: $dark-greyish;
           font-weight: $font-weight-bold;
 	        background-color: $light-greyish;
-          // @media #{$mobile} {
-          //   min-width: 80px;
-          // }
 	      }
 	      &.active {
 	        a {
@@ -146,10 +133,6 @@ main {
 				margin-left: 15px;
 				padding: 10px 40px;
 				text-transform: uppercase;
-				// @media #{$mobile} {
-				// 	min-width: auto;
-				// 	padding: 10px 20px;
-				// }
 				&:not(.disabled) {
 					@extend .btn-orange;
 				}
@@ -172,9 +155,6 @@ main {
 					@media #{$desktop} {
 						width: 250px;
 					}
-          // @media #{$mobile} {
-          //   width: 200px;
-          // }
 				} // Slider.
 				.off {
 					width: auto;
@@ -194,10 +174,6 @@ main {
 		      margin-left: 15px;
 		      padding: 10px 40px;
 		      text-transform: uppercase;
-		      // @media #{$mobile} {
-		      //   min-width: auto;
-		      //   padding: 10px;
-		      // }
 		      &:not(.disabled) {
 		        @extend .btn-orange;
 		      }
@@ -216,9 +192,6 @@ main {
 					margin-left: -15px;
 					margin-top: 80px;
 				}
-        // @media #{$mobile} {
-				// 	margin-top: 90px;
-				// }
 		  } // .pane-actions
 		} // #vm-header
 		#vm-listing {
