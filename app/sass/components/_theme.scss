@@ -175,9 +175,6 @@ main {
 				float: right;
         width: 600px;
         text-align: right;
-        @media #{$desktop} {
-          width: 558px;
-        }
 		    button {
 		      min-width: 165px;
 		      margin-left: 15px;
@@ -187,6 +184,14 @@ main {
 		        @extend .btn-orange;
 		      }
 		    } // button
+        @media #{$desktop} {
+          width: 557px;
+  				float: right;
+          text-align: right;
+          button {
+  		      padding: 10px 30px;
+  		    } // button
+        }
 				@media #{$tablet} {
 					float: none;
 					clear: both;
