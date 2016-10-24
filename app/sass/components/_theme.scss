@@ -22,7 +22,7 @@
 			@include font-size(18px);
 			img {
 				margin-right: 10px;
-				vertical-align: top;
+				vertical-align: initial;
 			}
 		} // #page-title
 		#action-dropdown {
@@ -142,8 +142,12 @@ main {
 			padding: 30px 15px;
 			background-color: $white;
 			.slide {
+        width: 400px;
 				float: left;
 				margin-top: 10px;
+        @media #{$desktop} {
+          width: 350px;
+        }
 				span {
 					color: $black;
 					font-weight: $font-weight-bold;
@@ -169,6 +173,11 @@ main {
 			} // .slide
 			.pane-actions {
 				float: right;
+        width: 600px;
+        text-align: right;
+        @media #{$desktop} {
+          width: 558px;
+        }
 		    button {
 		      min-width: 165px;
 		      margin-left: 15px;
