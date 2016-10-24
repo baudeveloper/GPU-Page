@@ -11,7 +11,6 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     concatCss = require('gulp-concat-css'),
     pngquant = require('imagemin-pngquant'),
-    neat = require('node-neat').includePaths,
     stripDebug = require('gulp-strip-debug'),
     realFavicon = require('gulp-real-favicon'),
     FAVICON_DATA_FILE = 'dist/faviconData.json',
@@ -40,8 +39,7 @@ gulp.task('sass', ['clean-sass', 'vendor-styles'], function() {
         // .pipe($.sourcemaps.init())
         .pipe($.sass.sync({
             outputStyle: 'compressed',
-            precision: 10,
-            // includePaths: ['sass'].concat(neat)
+            precision: 10
         }).on('error', $.sass.logError))
         .pipe($.size({title: '************ FILE SIZE: Styles (before) ****'}))
         .pipe($.if(argv.production, cleanCSS({compatibility: 'ie7'})))
