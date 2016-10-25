@@ -93,7 +93,6 @@ main {
 	margin-bottom: 30px;
 	#vm-gpu-component {
 	  border: 1px solid $dark-greyish;
-	  min-height: 270px;
 	  background: url("../images/bg-listings.png") repeat top/contain;
 		.child {
 	    padding-top: 15px;
@@ -146,7 +145,7 @@ main {
 				float: left;
 				margin-top: 10px;
         @media #{$desktop} {
-          width: 350px;
+          width: 325px;
         }
 				span {
 					color: $black;
@@ -202,7 +201,9 @@ main {
 		  } // .pane-actions
 		} // #vm-header
 		#vm-listing {
-			min-height: 270px;
+			height: 500px;
+      overflow-x: hidden;
+      overflow-y: scroll;
 			padding: 30px 15px;
 		  background: url("../images/bg-listings.png") repeat top/contain;
 			> ul {
@@ -266,7 +267,9 @@ main {
 			} // .machine-action
 		} // #vm-listing
 		#gpu-listing {
-      overflow: hidden;
+      height: 500px;
+      overflow-x: hidden;
+      overflow-y: scroll;
       // Tree Structure - Source: http://codepen.io/tpkahlon/pen/zKymPk
 		  .node-parent {
         width: 100%;
@@ -372,6 +375,26 @@ main {
 		      padding: 10px 30px;
 		      text-transform: uppercase;
 		    } // button
+        .partition-toggle {
+          position: absolute;
+          z-index: 100;
+          bottom: -12.5px;
+          left: 19px;
+        	width: 25px;
+        	height: 25px;
+          display: table;
+          background-color: $white;
+          text-decoration: none;
+          border-radius: 50%; // Source: https://davidwalsh.name/css-circles
+          -webkit-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.25);
+          -moz-box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.25);
+          box-shadow: 1px 1px 2px 2px rgba(0,0,0,0.25);
+          .fa {
+            vertical-align: middle;
+            text-align: center;
+            display: table-cell;
+          }
+        }
 				.slide {
 					float: left;
 					margin-top: 10px;

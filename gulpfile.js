@@ -260,7 +260,7 @@ gulp.task('default', ['build'], function() {
     });
     gulp.watch(config.sass, ['sass']);
     gulp.watch(config.fonts, ['fonts', browserSync.reload]);
-    gulp.watch(config.scripts, ['scripts']);
+    gulp.watch(config.script, ['scripts']);
     gulp.watch(config.images, ['images', browserSync.reload]);
     gulp.watch(config.html, ['html', browserSync.reload]);
 });

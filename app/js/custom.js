@@ -18,4 +18,13 @@ $(document).ready(function() {
 		}); // Source: https://github.com/seiyria/bootstrap-slider/issues/336
 	});
 
+	// Check if Parent node has no children.
+	$('.gpu-node').not(':has(.node-children)').find(".partition-toggle").hide();
+
+	// Partition Toggle.
+	$(".partition-toggle").on("click", function() {
+		$(this).find("i").toggleClass("fa-plus fa-minus");
+		$(this).parent().siblings("ul").toggle();
+	});
+
 });
