@@ -15,16 +15,16 @@ $(document).ready(function() {
 	$(".switch input").change(function() {
 	    if(this.checked) {
 	      $("#parent-partition").slider('enable');
-				$(".pane-actions").find("button:first").removeClass("disabled").addClass("btn-orange");
-				$("input:not(#parent-partition)").slider('disable');
-				$("input:not(#parent-partition)").parent().siblings("button").addClass("disabled").removeClass("btn-orange");
+			$(".pane-actions").find("button:first").removeClass("disabled").addClass("btn-orange");
+			$("input:not(#parent-partition)").slider('disable');
+			$("input:not(#parent-partition)").parent().siblings("button").addClass("disabled").removeClass("btn-orange");
 	    }
-			else {
-				$("#parent-partition").slider('disable');
-				$(".pane-actions").find("button:first").removeClass("btn-orange").addClass("disabled");
-				$("input:not(#parent-partition)").slider('enable');
-				$("input:not(#parent-partition)").parent().siblings("button").removeClass("disabled").addClass("btn-orange");
-			}
+		else {
+			$("#parent-partition").slider('disable');
+			$(".pane-actions").find("button:first").removeClass("btn-orange").addClass("disabled");
+			$("input:not(#parent-partition)").slider('enable');
+			$("input:not(#parent-partition)").parent().siblings("button").removeClass("disabled").addClass("btn-orange");
+		}
 	});	// Add an Input toggler along with Primary Slider.
 
 	$(".partition").each(function() {
