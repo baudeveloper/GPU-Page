@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 	$(".switch input").change(function() {
 	    if(this.checked) {
-	      $("#parent-partition").slider('enable');
+	      	$("#parent-partition").slider('enable');
 			$(".pane-actions").find("button:first").removeClass("disabled").addClass("btn-orange");
 			$("input:not(#parent-partition)").slider('disable');
 			$("input:not(#parent-partition)").parent().siblings("button").addClass("disabled").removeClass("btn-orange");
