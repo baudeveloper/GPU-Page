@@ -93,7 +93,7 @@ main {
 	margin-bottom: 30px;
 	#vm-gpu-component {
 	  border: 1px solid $dark-greyish;
-	  background: url("../images/bg-listings.png") repeat top/contain;
+	  
 		.child {
 	    padding-top: 15px;
 			padding-left: 15px;
@@ -141,47 +141,56 @@ main {
 			padding: 30px 15px;
 			background-color: $white;
 			.slide {
-        width: 400px;
+        		width: 440px;
 				float: left;
 				margin-top: 10px;
-        @media #{$desktop} {
-          width: 325px;
-        }
+        		position: relative;
+		        @media #{$desktop} {
+		          width: 325px;
+		        }
+		        @media #{$tablet} {
+		        	width: 100%;
+		        }
 				span {
 					color: $black;
 					font-weight: $font-weight-bold;
 					margin: 0 5px 0 0;
 					@include font-size(14px);
+					float: left;
 				} // Partitions.
 				.slider {
-					width: 290px;
+					width: 200px;
+          			z-index: 5;
+          			float: left;
 					@media #{$desktop} {
 						width: 250px;
 					}
 				} // Slider.
-				.off {
-					width: auto;
-					display: block;
-					margin-top: 35px;
-					font-weight: $font-weight-bold;
-					text-align: center;
-					color: $extra-greyish;
-					@include font-size(9px);
-					text-transform: uppercase;
-				} // Disabled state.
 			} // .slide
+			.switch {
+				float: right;
+				width: 150px;
+	          	label {
+	            	@include font-size(14px);
+	            	font-weight: $font-weight-bold;
+	          	}
+	          	@media #{$tablet} {
+					float: left;
+					margin-left: 30px;
+	          	}
+		    }
 			.pane-actions {
 				float: right;
-        width: 600px;
-        text-align: right;
-		    button {
-		      min-width: 165px;
-		      margin-left: 15px;
-		      padding: 10px 40px;
-		      text-transform: uppercase;
-		      &:not(.disabled) {
-		        @extend .btn-orange;
-		      }
+        		width: 600px;
+        		text-align: right;
+			    button {
+			      min-width: 165px;
+			      margin-left: 15px;
+			      padding: 10px 40px;
+			      text-transform: uppercase;
+			      &:not(.disabled) {
+			        @extend .btn-orange;
+			      }
 		    } // button
         @media #{$desktop} {
           width: 557px;
@@ -205,7 +214,9 @@ main {
       overflow-x: hidden;
       overflow-y: scroll;
 			padding: 30px 15px;
-		  background: url("../images/bg-listings.png") repeat top/contain;
+		  		background-image: url("../images/bg-listings.png");
+      			background-repeat: repeat;
+      			background-attachment: scroll;
 			> ul {
 				margin: 0;
 				padding: 0;
@@ -220,7 +231,7 @@ main {
           padding: 10px 15px;
           border-radius: 4px 4px 0 0;
           font-weight: $font-weight-bold;
-          background-color: $light-orange;
+          background-color: $color-primary;
 					border: 1px solid $color-primary;
 					box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.25);
 					-moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.25);
@@ -228,7 +239,7 @@ main {
           > span {
 						display: table-cell;
             line-height: normal;
-            color: $color-primary;
+            color: white;
             @include font-size(10px);
             text-transform: uppercase;
           }
@@ -238,7 +249,7 @@ main {
             text-align: right;
             line-height: normal;
 						display: table-cell;
-            color: $color-primary;
+            color: white;
             @include font-size(14px);
           }
         } // .machine-header
@@ -267,86 +278,89 @@ main {
 			} // .machine-action
 		} // #vm-listing
 		#gpu-listing {
-      height: 500px;
-      overflow-x: hidden;
-      overflow-y: scroll;
-      // Tree Structure - Source: http://codepen.io/tpkahlon/pen/zKymPk
-		  .node-parent {
-        width: 100%;
-        margin: 0 175px;
-		    padding: 0;
-		    padding-bottom: 30px;
-        position: relative;
-        @media #{$tablet} {
-          margin: 0 60px;
-        }
-        > li {
-          padding-top: 30px !important;
-          position: relative;
-          list-style: none;
-          padding-left: 70px;
-          &::after {
-            content: "";
-            position: absolute;
-            left: -10px;
-            border-left: 2px solid #000;
-            height: 100%;
-            width: 0px;
-            top: 0px;
-          }
-          &::before {
-            content: "";
-            position: absolute;
-            left: -10px;
-            border-top: 2px solid #000;
-            top: 85px;
-            width: 80px;
-            height: 0;
-          }
-          &:last-child {
-            &::after {
-              height: 85px;
-            }
-          } // Tree Structure styles for first/parent node items (Usually has more gap/width)
-          li {
+      		height: 500px;
+      		overflow-x: hidden;
+      		//overflow-y: scroll;
+      		
+      		// Tree Structure - Source: http://codepen.io/tpkahlon/pen/zKymPk
+		  	.node-parent {
+		  		background-image: url("../images/bg-listings.png");
+      			background-repeat: repeat;
+      			background-attachment: scroll;
+        		width: 100%;
+        		padding: 0 0 30px 175px;
+        		position: relative;
+        		margin-bottom: 0;
+        		@media #{$tablet} {
+          			padding: 0 0 60px 60px;        		
+          		}
+	        	> li {
+			        padding-top: 30px !important;
+			        position: relative;
+			        list-style: none;
+			        padding-left: 70px;
+			        &::after {
+			            content: "";
+			            position: absolute;
+			            left: -10px;
+			            border-left: 2px solid #000;
+			            height: 100%;
+			            width: 0px;
+			            top: 0px;
+			        }
+		          	&::before {
+		            	content: "";
+		            	position: absolute;
+		            	left: -10px;
+		            	border-top: 2px solid #000;
+		            	top: 85px;
+		            	width: 80px;
+		            	height: 0;
+		          	}
+		          	&:last-child {
+		            	&::after {
+		              		height: 85px;
+		            	}
+	          		} // Tree Structure styles for first/parent node items (Usually has more gap/width)
+		          	li {
 						padding-top: 15px !important;
-            position: relative;
-            list-style: none;
-            padding-left: 45px;
-            &::after {
-              content: "";
-              position: absolute;
-              left: -10px;
-              border-left: 2px solid #000;
-              height: 100%;
-              width: 0px;
-              top: 0px;
-            }
-            &::before {
-              content: "";
-              position: absolute;
-              left: -10px;
-              border-top: 2px solid #000;
-              top: 50px;
-              width: 55px;
-              height: 0;
-            }
-            &:last-child {
-              &::after {
-                height: 50px;
-              }
-            }
+			            position: relative;
+			            list-style: none;
+			            padding-left: 45px;
+			            &::after {
+			              content: "";
+			              position: absolute;
+			              left: -10px;
+			              border-left: 2px solid #000;
+			              height: 100%;
+			              width: 0px;
+			              top: 0px;
+			            }
+			            &::before {
+			              content: "";
+			              position: absolute;
+			              left: -10px;
+			              border-top: 2px solid #000;
+			              top: 50px;
+			              width: 55px;
+			              height: 0;
+			            }
+			            &:last-child {
+			              	&::after {
+			                	height: 50px;
+			              	}
+			            }
 					} // Tree Structure styles for second/child node items (Usually has less gap/width)
-        }
-        // Tree structure
-		    &:last-child {
-		      .gpu-node {
-            &:last-child {
-              margin-bottom: 30px;
-            }
-		      }
-		    } // Add margin to very last item of tree.
-		  } // .node-parent
+	        	}
+        		// Tree structure
+		    	&:last-child {
+		      		.gpu-node {
+            			&:last-child {
+              				margin-bottom: 30px;
+            			}
+		      		}
+		    	} // Add margin to very last item of tree.
+		 	} // .node-parent
 		  .partition-action {
 		    width: 540px;
 		    min-height: 110px;
@@ -417,15 +431,15 @@ main {
         @include clearfix();
         font-weight: $font-weight-bold;
 		    &.connected {
-					color: $color-primary;
+					color: white;
 					vertical-align: bottom;
-		      border: 1px solid $color-primary;
-		      background-color: $light-orange;
+		      border: 1px solid darken($color-primary,10%);
+		      background-color: $color-primary;
 		    } // .connected
 		    &.in-use {
-					color: $green;
-		      border: 1px solid $green;
-		      background-color: $light-green;
+					color: white;
+		      border: 1px solid darken($green,10%);
+		      background-color: $green;
 		    } // .in-use
 		    &.not-connected {
 					color: $extra-greyish;
