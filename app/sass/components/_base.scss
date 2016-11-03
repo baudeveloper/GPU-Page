@@ -48,5 +48,5 @@ $color-border: $dark-greyish;
 
 // 5. Selection Color in Browser - https://css-tricks.com/almanac/selectors/s/selection/
 
-*::-moz-selection { color: $greyish; background-color: $orange; }
-*::selection { color: $greyish; background-color: $orange; }
+*::-moz-selection { color: $greyish; background-color: darken($orange, 10%); }
+*::selection { color: $greyish; background-color: darken($orange, 10%); }

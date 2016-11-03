@@ -18,6 +18,7 @@
 	border-color: $color-primary;
 	&:hover, &:active, &:focus {
 		color: $white !important;
+		border-color: $orange !important;
 		background-color: $orange !important;
 	}
 }
