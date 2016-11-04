@@ -377,7 +377,7 @@ main {
             } // .node-parent
             .partition-action {
                 width: 400px;
-                min-height: 80px;
+                min-height: 75px;
                 height: auto;
                 padding: 8px;
                 position: relative;
@@ -388,11 +388,11 @@ main {
                 box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.5);
                 @include clearfix();
                 img {
-                    width: 22px;
+                    width: 16px;
                     margin-right: 6px;
+                    vertical-align: top;
                 } // img
                 h2 {
-                    //display: inline-block;
                     margin: 0 0 5px;
                     padding: 0;
                     font-weight: $font-weight-bold;
@@ -409,10 +409,11 @@ main {
                     }
                 } // h2
                 button {
-                    margin-top: 6px;
+                    margin-top: 10px;
                     float: right;
                     padding: 4px 8px;
                     text-transform: uppercase;
+                    @include font-size(12px);
                 } // button
                 .partition-toggle {
                     position: absolute;

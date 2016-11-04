@@ -37,8 +37,14 @@ a {
 }
 .partition-action {
   .counter {
-    margin-top: 11px;
+    margin-top: 7px;
     @include font-size(12px);
+  }
+  .slider-handle.custom {
+    top: 5px;
+    width: 28px;
+    height: 33px;
+    background-size: contain;
   }
 }
 // Disabled Slider
