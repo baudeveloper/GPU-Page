@@ -327,13 +327,13 @@ main {
                         position: absolute;
                         left: -10px;
                         border-top: 2px solid #000;
-                        top: 85px;
+                        top: 68px;
                         width: 40px;
                         height: 0;
                     }
                     &:last-child {
                         &::after {
-                          height: 85px;
+                          height: 68px;
                         }
                     } // Tree Structure styles for first/parent node items (Usually has more gap/width)
                     li {
@@ -355,13 +355,13 @@ main {
                             position: absolute;
                             left: -10px;
                             border-top: 2px solid #000;
-                            top: 50px;
+                            top: 40px;
                             width: 50px;
                             height: 0;
                         }
                         &:last-child {
                             &::after {
-                                height: 50px;
+                                height: 40px;
                             }
                         }
                     } // Tree Structure styles for second/child node items (Usually has less gap/width)
