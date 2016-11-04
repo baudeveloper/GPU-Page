@@ -219,7 +219,7 @@ main {
                     float: none;
                     clear: both;
                     display: block;
-                    margin-left: -15px;
+                    margin-left: -20px;
                     margin-top: 80px;
                 }
             } // .pane-actions
@@ -312,7 +312,7 @@ main {
                     padding-top: 30px !important;
                     position: relative;
                     list-style: none;
-                    padding-left: 70px;
+                    padding-left: 30px;
                     &::after {
                         content: "";
                         position: absolute;
@@ -328,19 +328,19 @@ main {
                         left: -10px;
                         border-top: 2px solid #000;
                         top: 85px;
-                        width: 80px;
+                        width: 40px;
                         height: 0;
                     }
                     &:last-child {
                         &::after {
-                            height: 85px;
+                          height: 85px;
                         }
                     } // Tree Structure styles for first/parent node items (Usually has more gap/width)
                     li {
                         padding-top: 15px !important;
                         position: relative;
                         list-style: none;
-                        padding-left: 45px;
+                        padding-left: 40px;
                         &::after {
                             content: "";
                             position: absolute;
@@ -356,7 +356,7 @@ main {
                             left: -10px;
                             border-top: 2px solid #000;
                             top: 50px;
-                            width: 55px;
+                            width: 50px;
                             height: 0;
                         }
                         &:last-child {
@@ -376,10 +376,10 @@ main {
                 } // Add margin to very last item of tree.
             } // .node-parent
             .partition-action {
-                width: 540px;
-                min-height: 110px;
+                width: 400px;
+                min-height: 80px;
                 height: auto;
-                padding: 15px;
+                padding: 8px;
                 position: relative;
                 border-radius: 4px;
                 background-color: $white;
@@ -388,7 +388,8 @@ main {
                 box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.5);
                 @include clearfix();
                 img {
-                    margin-right: 10px;
+                    width: 22px;
+                    margin-right: 6px;
                 } // img
                 h2 {
                     //display: inline-block;
@@ -396,7 +397,7 @@ main {
                     padding: 0;
                     font-weight: $font-weight-bold;
                     color: $color-primary;
-                    @include font-size(20px);
+                    @include font-size(16px);
                     .label {
                         float: right;
                         font-size: 10px;
@@ -408,8 +409,9 @@ main {
                     }
                 } // h2
                 button {
+                    margin-top: 6px;
                     float: right;
-                    padding: 10px 30px;
+                    padding: 4px 8px;
                     text-transform: uppercase;
                 } // button
                 .partition-toggle {
@@ -440,15 +442,18 @@ main {
                         color: $black;
                         font-weight: $font-weight-bold;
                         margin: 0 5px 0 0;
-                        @include font-size(14px);
+                        @include font-size(12px);
                     } // Partitions.
                 } // .slide
+                .slider {
+                  width: 185px;
+                }
             } // .partition-action
             .panel-child {
-                width: 455px;
-                min-height: 70px;
+                width: 320px;
+                min-height: 50px;
                 height: auto;
-                padding: 15px;
+                padding: 8px;
                 position: relative;
                 border-radius: 4px;
                 @include clearfix();
@@ -482,7 +487,7 @@ main {
                 } // .mxgpu-status
                 .gpu-name {
                     word-break: break-all;
-                    max-width: 150px;
+                    max-width: 125px;
                     float: left;
                     line-height: 18px;
                     display: inline-block;
@@ -495,7 +500,7 @@ main {
                     text-align: right;
                     line-height: 18px;
                     display: inline-block;
-                    @include font-size(16px);
+                    @include font-size(14px);
                 } // .vm-name
             } // .panel-child
         } // #gpu-listing

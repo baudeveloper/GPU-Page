@@ -35,6 +35,12 @@ a {
   text-align: center;
   @include font-size(14px);
 }
+.partition-action {
+  .counter {
+    margin-top: 11px;
+    @include font-size(12px);
+  }
+}
 // Disabled Slider
 .slider-disabled {
   .slider-track {
