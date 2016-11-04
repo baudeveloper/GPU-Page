@@ -38,7 +38,7 @@ gulp.task('sass', ['clean-sass', 'vendor-styles'], function() {
         .pipe($.newer(config.css))
         // .pipe($.sourcemaps.init())
         .pipe($.sass.sync({
-            outputStyle: 'compressed',
+            outputStyle: 'expanded',
             precision: 10
         }).on('error', $.sass.logError))
         .pipe($.size({title: '************ FILE SIZE: Styles (before) ****'}))
