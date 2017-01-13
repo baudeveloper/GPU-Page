@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "bootstrap-sass": "bootstrap-sass-official#^3.3.6",
-    "font-awesome": "fontawesome#^4.6.3",
+    "font-awesome": "fontawesome#^4.7.0",
     "jquery": "^1.11.3",
     "bootstrap-select": "^1.11.2",
     "jquery-ui": "^1.12.0",

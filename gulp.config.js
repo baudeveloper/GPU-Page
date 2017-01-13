@@ -31,6 +31,10 @@ module.exports = function() {
         fonts: [
             './bower_components/font-awesome/fonts/**/*.*',
             './bower_components/bootstrap-sass/assets/fonts/bootstrap/**/*.*'
+        ],
+        // JSON Locations
+        json: [
+            './app/*.json'
         ]
     };
     return config;

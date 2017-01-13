@@ -11,21 +11,85 @@
     <link rel="stylesheet" href="css/bootstrap-select.min.css" media="screen">
     <link rel="stylesheet" href="css/bootstrap-slider.min.css" media="screen">
     <link rel="stylesheet" href="css/style.css" media="screen">
-    <script src="js/modernizr.min.js"></script>
-    <!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><script src="js/respond.min.js"></script><![endif]-->
+   
+  <!-- Relative paths are required to keep plugin compatible with Flex and HTML clients -->
+  <link rel="stylesheet" href="../assets/css/default.css" media="screen" />
+    <script src="js/modernizr.min.js"></script>       <script src="js/modernizr.min.js"></script>
+    <!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><script src="js/respond.min.js"></script><![endif]-->       <!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><script src="js/respond.min.js"></script><![endif]-->
+  <!-- Safer not to use CDN links to javascript libraries, the Internet may not be available! -->
+  <script src="../assets/jquery-1.10.2.min.js"></script>
+  
+  <!-- ** web-platform.js must be included before any other view code ** -->
+  <script src="js/web-platform.js"></script>
+  <script src="js/error-reporter.js"></script>
+  <script src="js/data-loader.js"></script>
   </head>
 
   <body>
+
+    <div id="errorDialog" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">MxGPU Control Center Error</h4>
+          </div>
+          <div class="modal-body">
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End of errorDialog -->
+   
+    <div id="alertDialog" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">MxGPU Control Center</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End of alertDialog -->
+    
+    <div id="confirmDialog" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">MxGPU Control Center</h4>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="confirmOKBtn" class="btn btn-default" data-dismiss="modal">OK</button>
+            <button type="button" id="confirmCancelBtn" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div> <!-- End of confirmDialog -->
+
     <div class="container">
       <header id="page-intro">
         <section id="branding">
-          <img src="images/logo-amd.png" alt="AMD - MxGPUI">MxGPUI</section>
+          <img src="images/logo-amd.png" alt="AMD - MxGPUI">MxGPU Control Center</section>
         <!-- #branding-->
         <section id="page-navigation">
           <h1 id="page-title">
-            <img src="images/icon-server.png" alt="Server Icon"> Server 02</h1>
+            <img src="images/icon-server.png" alt="Server Icon"><span id="hostTitle">Please select a host</span></h1>
           <!-- #page-title-->
-          <div id="action-dropdown" class="dropdown">
+          <!-- <div id="action-dropdown" class="dropdown">
             <button id="dropdownMenu1" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" class="btn btn-default dropdown-toggle">Actions
               <i aria-hidden="true" class="fa fa-angle-down"></i>
             </button>
@@ -40,14 +104,17 @@
                 <a href="#">Stop</a>
               </li>
             </ul>
-          </div>
+          </div> -->
           <!-- #action-dropdown-->
           <ul id="page-tabs" role="tablist" class="parent nav nav-tabs">
-            <li role="presentation">
+            <!-- <li role="presentation">
               <a href="#monitor" aria-controls="monitor" role="tab" data-toggle="tab">Monitor </a>
             </li>
             <li role="presentation" class="active">
               <a href="#configure" aria-controls="configure" role="tab" data-toggle="tab">Configure</a>
+            </li> -->
+            <li role="presentation">
+              <a href="#exitMxGPUI" id="exitMxGPUI" aria-controls="monitor" role="tab" data-toggle="tab">Exit MxGPU Control Center</a>
             </li>
           </ul>
           <!-- #page-tabs-->
@@ -55,6 +122,11 @@
         <!-- #page-navigation-->
       </header>
       <!-- header-->
+
+      <div id="progress-div">
+        <div id="progress-bar"></div>
+      </div>
+
       <main>
         <div class="tab-content">
           <div id="monitor" role="tabpanel" class="tab-pane"></div>
@@ -63,12 +135,12 @@
             <div class="column">
               <div id="vm-gpu-component">
                 <section class="component-header">
-                  <ul role="tablist" class="child nav nav-tabs">
+                  <ul role="tablist" class="child nav nav-tabs" id="vm-gpu-tabs">
                     <li role="presentation" class="active">
-                      <a href="#vm" aria-controls="vm" role="tab" data-toggle="tab">VM</a>
+                      <a href="#vm" aria-controls="vm" role="tab" data-toggle="tab" id="vm-tab">VM</a>
                     </li>
                     <li role="presentation">
-                      <a href="#gpu" aria-controls="gpu" role="tab" data-toggle="tab">GPU</a>
+                      <a href="#gpu" aria-controls="gpu" role="tab" data-toggle="tab" id="gpu-tab"">GPU</a>
                     </li>
                   </ul>
                   <!-- .child-->
@@ -79,99 +151,15 @@
                     <div id="vm" role="tabpanel" class="tab-pane active">
                       <header id="vm-header">
                         <div class="pane-actions">
-                          <button type="button" class="btn btn-default">Auto Assign</button>
-                          <button type="button" class="btn btn-default disabled">Apply</button>
+                          <button type="button" class="btn btn-default" id="btn-vm-auto">Auto Assign</button>
+                          <button type="button" class="btn btn-default disabled" id="btn-vm-apply">Apply</button>
                         </div>
                         <!-- .pane-actions-->
                       </header>
                       <!-- header#vm-header   -->
                       <section id="vm-listing">
                         <ul>
-                          <li id="SallyBridge01">
-                            <div class="machine-header">
-                              <span>Virtual Machine</span>
-                              <h2>SallyBridge01</h2>
-                            </div>
-                            <div class="machine-action">
-                              <span>Assigned to
-                                <strong>GPU</strong>
-                              </span>
-                              <select class="selectpicker">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>No GPU</option>
-                              </select>
-                            </div>
-                          </li>
-                          <!-- end of #SallyBridge01-->
-                          <li id="Transformer02">
-                            <div class="machine-header">
-                              <span>Virtual Machine</span>
-                              <h2>Transformer02</h2>
-                            </div>
-                            <div class="machine-action">
-                              <span>Assigned to
-                                <strong>GPU</strong>
-                              </span>
-                              <select class="selectpicker">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>No GPU</option>
-                              </select>
-                            </div>
-                          </li>
-                          <!-- end of #Transformer0-->
-                          <li id="JamesBod007">
-                            <div class="machine-header">
-                              <span>Virtual Machine</span>
-                              <h2>Transformer02</h2>
-                            </div>
-                            <div class="machine-action">
-                              <span>Assigned to
-                                <strong>GPU</strong>
-                              </span>
-                              <select class="selectpicker">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>No GPU</option>
-                              </select>
-                            </div>
-                          </li>
-                          <!-- end of #JamesBod007-->
-                          <li id="Shockwave09">
-                            <div class="machine-header">
-                              <span>Virtual Machine</span>
-                              <h2>Shockwave09</h2>
-                            </div>
-                            <div class="machine-action">
-                              <span>Assigned to
-                                <strong>GPU</strong>
-                              </span>
-                              <select class="selectpicker">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>No GPU</option>
-                              </select>
-                            </div>
-                          </li>
-                          <!-- end of #Shockwave09-->
-                          <li id="Textile08">
-                            <div class="machine-header">
-                              <span>Virtual Machine</span>
-                              <h2>Textile08</h2>
-                            </div>
-                            <div class="machine-action">
-                              <span>Assigned to
-                                <strong>GPU</strong>
-                              </span>
-                              <select class="selectpicker">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>No GPU</option>
-                              </select>
-                            </div>
-                          </li>
-                          <!-- end of #Textile08-->
+                         
                         </ul>
                         <!-- ul-->
                       </section>
@@ -183,168 +171,21 @@
                           <span>Partitions:</span>
                           <input id="parent-partition" type="text" class="partition">
                           <div class='switch'>
-                            <label><input type='checkbox'> Apply to All VM's</label>
+                            <label><input type='checkbox'> Apply to All GPUs</label>
                           </div>
                         </div>
                         <!-- #primary-slider-->
                         <div class="pane-actions ">
-                          <button type="button" class="btn btn-default disabled">Apply</button>
-                          <button type="button" class="btn btn-default disabled">Restore</button>
-                          <button type="button" class="btn btn-default">Refresh </button>
+                          <button type="button" class="btn btn-default disabled" id="btn-gpu-apply">Apply</button>
+                          <button type="button" class="btn btn-default disabled" id="btn-gpu-restore">Restore</button>
+                          <button type="button" class="btn btn-default" id="btn-gpu-refresh">Refresh </button>
                         </div>
                         <!-- .pane-actions-->
                       </header>
                       <!-- #gpu-header-->
                       <section id="gpu-listing">
                         <ul class="node-parent">
-                          <li id="gpu01" class="gpu-node">
-                            <div class="partition-action">
-                              <h2><img src="images/icon-gpu.png" alt="GPU Icon">GPU 01 <span class="label label-power-user">Power User</span></h2>
-                              <div class="slide">
-                                <span>Partitions:</span>
-                                <input id="gpu-partition" type="text" class="partition" data-slider-value="3">
-                              </div>
-                              <button type="button" class="btn btn-default btn-orange">Apply</button>
-                              <a href="#" class="partition-toggle"><i class="fa fa-minus" aria-hidden="true"></i></a>
-                            </div>
-                            <ul class="node-children">
-                              <li id="mxgpu01">
-                                <div class="panel-child connected">
-                                  <span class="mxgpu-status">Connected to</span>
-                                  <span class="gpu-name">mxGPU 01</span>
-                                  <span class="vm-name">VM SallyBridge01</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu01-->
-                              <li id="mxgpu02">
-                                <div class="panel-child in-use">
-                                  <span class="mxgpu-status">In Use</span>
-                                  <span class="gpu-name">mxGPU 02</span>
-                                  <span class="vm-name">VM Transformer02</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu02-->
-                              <li id="mxgpu03">
-                                <div class="panel-child in-use">
-                                  <span class="mxgpu-status">In Use</span>
-                                  <span class="gpu-name">mxGPU 03</span>
-                                  <span class="vm-name">VM JamesBond007</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu03-->
-                            </ul>
-                            <!-- .node-children-->
-                          </li>
-                          <!-- #gpu01-->
-                          <li id="gpu02" class="gpu-node">
-                            <div class="partition-action">
-                              <h2><img src="images/icon-gpu.png" alt="GPU Icon">GPU 02 <span class="label label-power-user">Power User</span></h2>
-                              <div class="slide">
-                                <span>Partitions:</span>
-                                <input id="gpu2-partition" type="text" class="partition" data-slider-value="2">
-                              </div>
-                              <button type="button" class="btn btn-default btn-orange">Apply</button>
-                              <a href="#" class="partition-toggle"><i class="fa fa-minus" aria-hidden="true"></i></a>
-                            </div>
-                            <!-- .partition-action-->
-                            <ul class="node-children">
-                              <li id="mxgpu04">
-                                <div class="panel-child not-connected">
-                                  <span class="mxgpu-status">Not Connected</span>
-                                  <span class="gpu-name">mxGPU 04</span>
-                                  <span class="vm-name"></span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu04-->
-                              <li id="mxgpu05">
-                                <div class="panel-child not-connected">
-                                  <span class="mxgpu-status">Not Connected</span>
-                                  <span class="gpu-name">mxGPU 05</span>
-                                  <span class="vm-name"></span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu05-->
-                            </ul>
-                            <!-- .node-children-->
-                          </li>
-                          <!-- #gpu02-->
-                          <li id="gpu03" class="gpu-node">
-                            <div class="partition-action">
-                              <h2><img src="images/icon-gpu.png" alt="GPU Icon">GPU 03 <span class="label label-power-user">Power User</span></h2>
-                              <div class="slide">
-                                <span>Partitions:</span>
-                                <input id="gpu2-partition" type="text" class="partition" data-slider-value="6">
-                              </div>
-                              <button type="button" class="btn btn-default btn-orange">Apply</button>
-                              <a href="#" class="partition-toggle"><i class="fa fa-minus" aria-hidden="true"></i></a>
-                            </div>
-                            <!-- .partition-action-->
-                            <ul class="node-children">
-                              <li id="mxgpu01">
-                                <div class="panel-child connected">
-                                  <span class="mxgpu-status">Connected to</span>
-                                  <span class="gpu-name">mxGPU 01</span>
-                                  <span class="vm-name">VM TestUser01</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu01-->
-                              <li id="mxgpu02">
-                                <div class="panel-child connected">
-                                  <span class="mxgpu-status">Connected to</span>
-                                  <span class="gpu-name">mxGPU 02</span>
-                                  <span class="vm-name">VM TestUser02</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu02-->
-                              <li id="mxgpu03">
-                                <div class="panel-child connected">
-                                  <span class="mxgpu-status">Connected to</span>
-                                  <span class="gpu-name">mxGPU 03</span>
-                                  <span class="vm-name">VM TestUser03</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu03-->
-                              <li id="mxgpu04">
-                                <div class="panel-child connected">
-                                  <span class="mxgpu-status">Connected to</span>
-                                  <span class="gpu-name">mxGPU 04</span>
-                                  <span class="vm-name">VM TestUser04</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu04-->
-                              <li id="mxgpu05">
-                                <div class="panel-child connected">
-                                  <span class="mxgpu-status">Connected to</span>
-                                  <span class="gpu-name">mxGPU 05</span>
-                                  <span class="vm-name">VM TestUser05</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu06-->
-                              <li id="mxgpu05">
-                                <div class="panel-child connected">
-                                  <span class="mxgpu-status">Connected to</span>
-                                  <span class="gpu-name">mxGPU 06</span>
-                                  <span class="vm-name">VM TestUser06</span>
-                                </div>
-                              </li>
-                              <!-- #mxgpu03-->
-                            </ul>
-                            <!-- .node-children-->
-                          </li>
-                          <!-- #gpu03-->
-                          <li id="gpu04" class="gpu-node">
-                            <div class="partition-action">
-                              <h2><img src="images/icon-gpu.png" alt="GPU Icon">GPU 04 <span class="label label-power-user">Power User</span></h2>
-                              <div class="slide">
-                                <span>Partitions:</span>
-                                <input id="gpu2-partition" type="text" class="partition" data-slider-value="0">
-                              </div>
-                              <button type="button" class="btn btn-default btn-orange">Apply</button>
-                              <a href="#" class="partition-toggle"><i class="fa fa-minus" aria-hidden="true"></i></a>
-                            </div>
-                            <!-- .partition-action-->
-                          </li>
-                          <!-- #gpu04-->
+                          
                         </ul>
                         <!-- .node-parent-->
                       </section>
@@ -371,5 +212,7 @@
   <script src="js/bootstrap-select.min.js"></script>
   <script src="js/bootstrap-slider.min.js"></script>
   <script src="js/custom.js"></script>
-
+  <script src="js/data-display.js"></script>
+  <script src="js/data-updater.js"></script>
+  <script src="js/navigation.js"></script>
 </html>

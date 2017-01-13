@@ -4,7 +4,7 @@
     margin-bottom: 30px;
     #branding {
         font-weight: $font-weight-bold;
-        color: $color-primary;
+        color: $blue;
         @include font-size(18px);
         img {
             margin-right: 20px;
@@ -16,7 +16,7 @@
         #page-title {
             margin: 0 20px 0 0;
             line-height: normal;
-            color: $color-primary;
+            color: $blue;
             display: inline-block;
             vertical-align: middle;
             @include font-size(18px);
@@ -30,7 +30,7 @@
             button {
                 border-radius: 0;
                 padding: 7px 12px 5px;
-                color: $extra-greyish;
+                color: $almost-black;
                 @include font-size(14px);
                 background-color: transparent;
                 border: 1px solid transparent;
@@ -56,9 +56,9 @@
                     &:hover,
                     &:active,
                     &:focus {
-                        color: $orange;
+                        color: $blue;
                         border-radius: 4px;
-                        background-color: $light-orange;
+                        background-color: #ccccff;
                     }
                 }
             } // .dropdown-menu
@@ -79,7 +79,7 @@
                     a {
                         font-weight: $font-weight-bold;
                         border: none !important;
-                        border-bottom: 4px solid $color-primary !important;
+                        border-bottom: 4px solid $blue !important;
                     }
                 }
             }
@@ -114,7 +114,7 @@ main {
                 }
                 &.active {
                     a {
-                        color: $color-primary;
+                        color: $blue;
                         background-color: $white;
                         border-color: $dark-greyish;
                         border-bottom-color: $white;
@@ -228,33 +228,48 @@ main {
             height: 500px;
             overflow-x: hidden;
             overflow-y: scroll;
+            background-image: url("../images/bg-listings.png");
+            background-repeat: repeat;
+            background-attachment: scroll;
             > ul {
                 margin: 0;
                 padding: 30px 15px;
                 list-style-type: none;
                 height: 500px;
-                background-image: url("../images/bg-listings.png");
-                background-repeat: repeat;
-                background-attachment: scroll;
                 > li {
                     margin-bottom: 30px;
                     list-style-type: none;
                 }
                 .machine-header {
                     width: 100%;
+                    height: 54px;
                     display: table;
                     padding: 10px 15px;
                     border-radius: 4px 4px 0 0;
                     font-weight: $font-weight-bold;
-                    background-color: $color-primary;
-                    border: 1px solid $color-primary;
+                    background-color: $super-greyish;
+                    border: 1px solid $extra-greyish;
                     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
                     -moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
                     -webkit-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
+                    &.connected {
+                        background-color: #9999ff;
+                        border: 1px solid $extra-greyish;
+                        color: white;
+                    }
+                    &.in-use {
+                        background-color: $blue;
+                        border: 1px solid $extra-greyish;
+                        color: white;
+                    }
+                    &.not-connected {
+                        background-color: $super-greyish;
+                        border: 1px solid $extra-greyish;
+                        color: $extra-greyish;
+                    }
                     > span {
                         display: table-cell;
                         line-height: normal;
-                        color: white;
                         @include font-size(10px);
                         text-transform: uppercase;
                     }
@@ -264,8 +279,9 @@ main {
                         text-align: right;
                         line-height: normal;
                         display: table-cell;
-                        color: white;
-                        @include font-size(14px);
+                        font-size: 13px;
+                        max-width: 120px;
+                        word-wrap: break-word;
                     }
                 } // .machine-header
                 .machine-action {
@@ -273,7 +289,7 @@ main {
                     display: table;
                     background-color: $white;
                     border-radius: 0 0 4px 4px;
-                    border: 1px solid $color-primary;
+                    border: 1px solid $extra-greyish;
                     border-top: none;
                     box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
                     -moz-box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.25);
@@ -282,9 +298,9 @@ main {
                         width: 50%;
                         padding: 10px 15px;
                         display: table-cell;
-                        color: $color-primary;
+                        color: $blue;
                         @include font-size(14px);
-                        border-right: 1px solid $color-primary;
+                        border-right: 1px solid $extra-greyish;
                         strong {
                             font-weight: $font-weight-bold;
                         }
@@ -396,7 +412,7 @@ main {
                     margin: 0 0 5px;
                     padding: 0;
                     font-weight: $font-weight-bold;
-                    color: $color-primary;
+                    color: $almost-black;
                     @include font-size(16px);
                     .label {
                         float: right;
@@ -440,7 +456,7 @@ main {
                     margin-top: 10px;
                     display: inline-block;
                     span {
-                        color: $black;
+                        color: $white;
                         font-weight: $font-weight-bold;
                         margin: 0 5px 0 0;
                         @include font-size(12px);
@@ -462,16 +478,16 @@ main {
                 &.connected {
                     color: white;
                     vertical-align: bottom;
-                    border: 1px solid darken($color-primary, 10%);
-                    background-color: $color-primary;
+                    border: 1px solid #000099;
+                    background-color: #9999ff;
                 } // .connected
                 &.in-use {
                     color: white;
-                    border: 1px solid darken($green, 10%);
-                    background-color: $green;
+                    border: 1px solid #750000;
+                    background-color: #0000ff;
                 } // .in-use
                 &.not-connected {
-                    color: $extra-greyish;
+                    color: $almost-black;
                     border: 1px solid $extra-greyish;
                     background-color: $super-greyish;
                     &:last-child {
@@ -487,7 +503,7 @@ main {
                     text-transform: uppercase;
                 } // .mxgpu-status
                 .gpu-name {
-                    word-break: break-all;
+                    word-break: break-word;
                     max-width: 125px;
                     float: left;
                     line-height: 18px;
@@ -507,3 +523,21 @@ main {
         } // #gpu-listing
     } // #vm-gpu-component
 } // main
+
+#progress-div {
+    position: relative;
+    width:100%;
+    height:15px;
+    background-color:#f2f2f2;
+    margin-top:-30px;
+    margin-bottom:15px;
+}
+#progress-bar {
+    position:absolute;
+    width:0%;
+    height:100%;
+    background-color:#0000ff;
+}
+.modal-dialog {
+    top: 30%;
+}

@@ -14,11 +14,16 @@
 // Button Orange
 .btn-orange {
 	transition: .4s all;
-	color: $color-primary;
-	border-color: $color-primary;
-	&:hover, &:active, &:focus {
+	color: $almost-black;
+	border-color: $almost-black;
+	&:hover, &:active {
 		color: $white !important;
-		border-color: $orange !important;
-		background-color: $orange !important;
+		border-color: $almost-black !important;
+		background-color: $almost-black !important;
 	}
+}
+
+/*Fix problem with buttons staying coloured after being clicked*/
+.btn-default:focus {
+	background-color:#fff;
 }

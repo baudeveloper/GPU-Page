@@ -149,6 +149,19 @@ gulp.task('fonts', ['clean-fonts'], function() {
         }));
 });
 
+gulp.task('json', ['clean-json'], function() {
+    log('Copying JSON.');
+    return gulp.src(config.json)
+        .pipe($.size({title: '************ FILE SIZE: JSON ****'}))
+        .pipe(gulp.dest(config.dist))
+        .pipe($.notify({
+            title: 'Gulp',
+            subtitle: 'Success.',
+            message: 'JSON successfully copied into Dist folder.',
+            sound: "Pop"
+        }));
+});
+
 // gulp.task('generate-favicon', function(done) {
 //     realFavicon.generateFavicon({
 //         masterPicture: './app/images/master_picture.png',
@@ -242,9 +255,13 @@ gulp.task('clean-fonts', function() {
     var files = config.dist + '/fonts';
     clean(files);
 });
+gulp.task('clean-json', function() {
+    var files = config.dist + '/*.json';
+    clean(files);
+});
 
 gulp.task('build', function(cb) {
-    runSequence('clean-dist', 'html', 'fonts', 'sass', 'scripts', 'images', 'premium-fonts', cb);
+    runSequence('clean-dist', 'html', 'fonts', 'json', 'sass', 'scripts', 'images', 'premium-fonts', cb);
 });
 
 gulp.task('default', ['build'], function() {
@@ -260,6 +277,7 @@ gulp.task('default', ['build'], function() {
     });
     gulp.watch(config.sass, ['sass']);
     gulp.watch(config.fonts, ['fonts', browserSync.reload]);
+    gulp.watch(config.json, ['json', browserSync.reload]);
     gulp.watch(config.script, ['scripts']);
     gulp.watch(config.images, ['images', browserSync.reload]);
     gulp.watch(config.html, ['html', browserSync.reload]);

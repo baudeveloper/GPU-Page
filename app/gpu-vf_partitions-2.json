@@ -1,0 +1,451 @@
+{
+	"result": {
+		"hostId": "urn:vmomi:HostSystem:host-9:c8b0a77b-def0-4947-af73-2de7fb9d0a27",
+		"gpuList": [{
+			"gpuName": "AMD FirePro S7150 PF",
+			"gpuId": "00000:06:00.0",
+			"maxVfNumber": 16,
+			"vfList": [{
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:02.0",
+				"vfStatus": "IN_USE",
+				"vm": {
+					"vmName": "vm1onhost1_VF",
+					"vmId": "vm00001abcd",
+					"vfId": "00000:06:02.0",
+					"isPoweredOn": true
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:02.1",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm2onhost1_VF",
+					"vmId": "vm00002abcd",
+					"vfId": "00000:06:02.1",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:02.2",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm3onhost1_VF",
+					"vmId": "vm00003abcd",
+					"vfId": "00000:06:02.2",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:02.3",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm4onhost1_VF",
+					"vmId": "vm00004abcd",
+					"vfId": "00000:06:02.3",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:02.4",
+				"vfStatus": "IN_USE",
+				"vm": {
+					"vmName": "vm5onhost1_VF",
+					"vmId": "vm00005abcd",
+					"vfId": "00000:06:02.4",
+					"isPoweredOn": true
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:02.5",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm6onhost1_VF",
+					"vmId": "vm00006abcd",
+					"vfId": "00000:06:02.5",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:02.6",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm7onhost1_VF",
+					"vmId": "vm00007abcd",
+					"vfId": "00000:06:02.6",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:02.7",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm8onhost1_VF",
+					"vmId": "vm00008abcd",
+					"vfId": "00000:06:02.7",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:03.0",
+				"vfStatus": "IN_USE",
+				"vm": {
+					"vmName": "vm9onhost1_VF",
+					"vmId": "vm00009abcd",
+					"vfId": "00000:06:03.0",
+					"isPoweredOn": true
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:03.1",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm10onhost1_VF",
+					"vmId": "vm00010abcd",
+					"vfId": "00000:06:03.1",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:03.2",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm11onhost1_VF",
+					"vmId": "vm00011abcd",
+					"vfId": "00000:06:03.2",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:03.3",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm12onhost1_VF",
+					"vmId": "vm00012abcd",
+					"vfId": "00000:06:03.3",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:03.4",
+				"vfStatus": "IN_USE",
+				"vm": {
+					"vmName": "vm13onhost1_VF",
+					"vmId": "vm00013abcd",
+					"vfId": "00000:06:03.4",
+					"isPoweredOn": true
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:03.5",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm14onhost1_VF",
+					"vmId": "vm00014abcd",
+					"vfId": "00000:06:03.5",
+					"isPoweredOn": false
+				}
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:06:03.6",
+				"vfStatus": "ASSIGNED",
+				"vm": {
+					"vmName": "vm15onhost1_VF",
+					"vmId": "vm00015abcd",
+					"vfId": "00000:06:03.6",
+					"isPoweredOn": false
+				}
+			}],
+			"hasVfInUse": true,
+			"unassignedVfCount": 0
+		}, {
+			"gpuName": "AMD FirePro S7150 PF",
+			"gpuId": "00000:09:00.0",
+			"maxVfNumber": 16,
+			"vfList": [{
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:09:02.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}],
+			"hasVfInUse": false,
+			"unassignedVfCount": 1
+		}, {
+			"gpuName": "AMD FirePro S7150 PF",
+			"gpuId": "00000:85:00.0",
+			"maxVfNumber": 16,
+			"vfList": [{
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:85:02.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:85:02.1",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:85:02.2",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:85:02.3",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:85:02.4",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:85:02.5",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:85:02.6",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:85:02.7",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}],
+			"hasVfInUse": false,
+			"unassignedVfCount": 8
+		}, {
+			"gpuName": "AMD FirePro S7150 PF",
+			"gpuId": "00000:87:00.0",
+			"maxVfNumber": 16,
+			"vfList": [{
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:87:02.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:87:02.1",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:87:02.2",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:87:02.3",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}],
+			"hasVfInUse": false,
+			"unassignedVfCount": 4
+		}, {
+			"gpuName": "AMD FirePro S7150 PF",
+			"gpuId": "00000:01:00.0",
+			"maxVfNumber": 16,
+			"vfList": [{
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:01:02.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:01:02.1",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}],
+			"hasVfInUse": false,
+			"unassignedVfCount": 2
+		}, {
+			"gpuName": "AMD FirePro S7150 PF",
+			"gpuId": "00000:03:00.0",
+			"maxVfNumber": 16,
+			"vfList": [{
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:02.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:02.1",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:02.2",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:02.3",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:02.4",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:02.5",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:02.6",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:02.7",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:03:03.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}],
+			"hasVfInUse": false,
+			"unassignedVfCount": 9
+		}, {
+			"gpuName": "AMD FirePro S7150 PF",
+			"gpuId": "00000:89:00.0",
+			"maxVfNumber": 16,
+			"vfList": [{
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:02.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:02.1",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:02.2",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:02.3",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:02.4",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:02.5",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:02.6",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:02.7",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:03.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:03.1",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:03.2",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:03.3",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:03.4",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:03.5",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:03.6",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:89:03.7",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}],
+			"hasVfInUse": false,
+			"unassignedVfCount": 16
+		}, {
+			"gpuName": "AMD FirePro S7150 PF",
+			"gpuId": "00000:8b:00.0",
+			"maxVfNumber": 16,
+			"vfList": [{
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:8b:02.0",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:8b:02.1",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:8b:02.2",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:8b:02.3",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:8b:02.4",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:8b:02.5",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}, {
+				"vfName": "AMD FirePro S7150 VF",
+				"vfId": "00000:8b:02.6",
+				"vfStatus": "UNASSIGNED",
+				"vm": null
+			}],
+			"hasVfInUse": false,
+			"unassignedVfCount": 7
+		}],
+		"hasUnassignedVf": true,
+		"globalMaxVfNumber": 16
+	},
+	"operationType": "load",
+	"actionUid": "getMxGPUsForHost"
+}

@@ -1,4 +1,6 @@
 $brand-primary: $color-primary !default;
+$link-color: $blue !default;
+$link-hover-color: $blue !default;
 $font-family-sans-serif: "ProximaNova", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $icon-font-path: 'if($bootstrap-sass-asset-helper, "bootstrap/", "../fonts/") !default';
 $screen-xs: 1px !default;

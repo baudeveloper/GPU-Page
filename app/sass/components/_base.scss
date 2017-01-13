@@ -28,8 +28,9 @@ $font-weight-extra-bold: 500;
 // 4. Colors.
 
 $black: #000000;
-$white: #FFFFFF;
+$white: #ffffff;
 $green: #00a99d;
+$blue: #0000ff;
 $light-green: #d9f2f0;
 $orange: #f26621;
 $light-orange: #fde3d7;
@@ -41,12 +42,12 @@ $extra-greyish: #999999;
 $cool-greyish: #D9D9DB;
 $super-greyish: #eaeaea;
 $rare-greyish: #aeaeae;
-
+$almost-black: #1b1b1b;
 $color-primary: $orange;
 $color-background: $greyish;
 $color-border: $dark-greyish;
 
 // 5. Selection Color in Browser - https://css-tricks.com/almanac/selectors/s/selection/
 
-*::-moz-selection { color: $greyish; background-color: darken($orange, 10%); }
-*::selection { color: $greyish; background-color: darken($orange, 10%); }
+*::-moz-selection { color: $greyish; background-color: #000099; }
+*::selection { color: $greyish; background-color: #000099; }
