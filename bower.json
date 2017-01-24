@@ -26,6 +26,8 @@
     "bower": "*",
     "install": "^1.0.4",
     "seiyria-bootstrap-slider": "^9.2.2",
-    "html5shiv": "^3.7.3"
+    "html5shiv": "^3.7.3",
+    "datatables.net": "^1.10.13",
+    "datatables.net-dt": "^3.2.2"
   }
 }

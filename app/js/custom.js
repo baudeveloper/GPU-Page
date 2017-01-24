@@ -1,5 +1,23 @@
 //This file includes custom-css related code and actions for things like sliders.
 
+//Initiating Datatables for VM tab
+$(document).ready(function() {
+    $('#vm-listing table').DataTable({
+        paging: false,
+        searching: false,
+        // order: [[ 1, "asc" ]],
+        ordering: false,
+        info: false,
+        scrollY: 407, //gives you 12 rows
+        scrollCollapse: true
+    });
+    $('.toggleBtn label').click(function () {
+        var checked = $('input', this).is(':checked');
+        $('span', this).text(checked ? 'Power Off' : 'Power On');
+        $(this).closest('tr').toggleClass('on', 'off');
+    });
+
+} );
 
 var refreshVMList = function () {
     $('.selectpicker').selectpicker('refresh');

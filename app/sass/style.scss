@@ -80,6 +80,9 @@
 // Bower Libraries
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
 
+//Vendor
+@import "components/dataTables.bootstrap";
+
 // SMACSS Model
 @import "components/module";
 @import "components/layout";

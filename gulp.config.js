@@ -10,7 +10,8 @@ module.exports = function() {
             './bower_components/bootstrap-sass/assets/javascripts/bootstrap.min.js',
             './bower_components/bootstrap-select/dist/js/bootstrap-select.min.js',
             './bower_components/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js',
-            './bower_components/html5shiv/dist/html5shiv.min.js'
+            './bower_components/html5shiv/dist/html5shiv.min.js',
+            './bower_components/datatables.net/js/jquery.dataTables.min.js'
         ],
         script: [
             './app/js/*.js'

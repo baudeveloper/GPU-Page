@@ -107,11 +107,11 @@
           </div> -->
           <!-- #action-dropdown-->
           <ul id="page-tabs" role="tablist" class="parent nav nav-tabs">
-            <!-- <li role="presentation">
-              <a href="#monitor" aria-controls="monitor" role="tab" data-toggle="tab">Monitor </a>
+            <!-- <li role="presentation" class="active">
+              <a href="#vm" aria-controls="vm" role="tab" data-toggle="tab">VM</a>
             </li>
-            <li role="presentation" class="active">
-              <a href="#configure" aria-controls="configure" role="tab" data-toggle="tab">Configure</a>
+            <li role="presentation">
+              <a href="#gpu" aria-controls="gpu" role="tab" data-toggle="tab">GPU</a>
             </li> -->
             <li role="presentation">
               <a href="#exitMxGPUI" id="exitMxGPUI" aria-controls="monitor" role="tab" data-toggle="tab">Exit MxGPU Control Center</a>
@@ -128,23 +128,8 @@
       </div>
 
       <main>
-        <div class="tab-content">
-          <div id="monitor" role="tabpanel" class="tab-pane"></div>
-          <!-- #monitor-->
-          <div id="configure" role="tabpanel" class="tab-pane active">
             <div class="column">
               <div id="vm-gpu-component">
-                <section class="component-header">
-                  <ul role="tablist" class="child nav nav-tabs" id="vm-gpu-tabs">
-                    <li role="presentation" class="active">
-                      <a href="#vm" aria-controls="vm" role="tab" data-toggle="tab" id="vm-tab">VM</a>
-                    </li>
-                    <li role="presentation">
-                      <a href="#gpu" aria-controls="gpu" role="tab" data-toggle="tab" id="gpu-tab"">GPU</a>
-                    </li>
-                  </ul>
-                  <!-- .child-->
-                </section>
                 <!-- .component-header-->
                 <section class="component-content">
                   <div class="tab-content">
@@ -158,9 +143,369 @@
                       </header>
                       <!-- header#vm-header   -->
                       <section id="vm-listing">
-                        <ul>
+                        <table class="table table-hover table-bordered" cellspacing="0" width="100%">
+                          <colgroup>
+                            <col>
+                            <col>
+                            <col width="50%">
+                            <col>
+                          </colgroup>
+                          <thead>
+                            <tr>
+                              <th>Host</th>
+                              <th>VM</th>
+                              <th>GPU</th>
+                              <th>Power</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="on">
+                              <td>10.6.132.140</td>
+                              <td>vm1onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option selected>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power On</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm2onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm3onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm4onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option selected>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm5onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr class="on">
+                              <td>10.6.132.140</td>
+                              <td>vm6onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power On</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm7onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm8onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr class="on">
+                              <td>10.6.132.140</td>
+                              <td>vm1onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power On</td>
+                            </tr>
+                            <tr class="on">
+                              <td>10.6.132.140</td>
+                              <td>vm1onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option selected>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power On</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm2onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm3onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm4onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option selected>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm5onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr class="on">
+                              <td>10.6.132.140</td>
+                              <td>vm6onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power On</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm7onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr>
+                              <td>10.6.132.140</td>
+                              <td>vm8onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power Off</td>
+                            </tr>
+                            <tr class="on">
+                              <td>10.6.132.140</td>
+                              <td>vm1onhost1</td>
+                              <td>
+                                <select class="selectpicker show-tick"  data-width="75%">
+                                  <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.3 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.4 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.5 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.6 | AMD FirePro S7150 PF</option>
+                                  <option>00000:06:02.7 | AMD FirePro S7150 PF</option>
+                                  <option selected>00000:06:02.8 | AMD FirePro S7150 PF</option>
+                                  <option>No GPU</option>
+                                </select>
+                              </td>
+                              <td>Power On</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- <ul>
                          
-                        </ul>
+                        </ul> -->
                         <!-- ul-->
                       </section>
                       <!-- section#vm-listing-->
@@ -199,10 +544,6 @@
               <!-- #vm-gpu-component-->
             </div>
             <!-- .column-->
-          </div>
-          <!-- #configure-->
-        </div>
-        <!-- .tab-content-->
       </main>
       <!-- main-->
     </div>
@@ -211,6 +552,8 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/bootstrap-select.min.js"></script>
   <script src="js/bootstrap-slider.min.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.bootstrap.min.js"></script>
   <script src="js/custom.js"></script>
   <script src="js/data-display.js"></script>
   <script src="js/data-updater.js"></script>

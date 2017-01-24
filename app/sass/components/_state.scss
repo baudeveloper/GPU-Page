@@ -101,9 +101,9 @@ a {
     margin: -2px 0 0;
     border: none !important;
     border-radius: 0 0 4px 4px;
-    -webkit-box-shadow: 1px 10px 5px 5px rgba(0,0,0,0.25);
-    -moz-box-shadow: 1px 10px 5px 5px rgba(0,0,0,0.25);
-    box-shadow: 1px 10px 5px 5px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 1px 5px 3px 2px rgba(0,0,0,0.25);
+    -moz-box-shadow: 1px 5px 3px 2px rgba(0,0,0,0.25);
+    box-shadow: 1px 5px 3px 2px rgba(0,0,0,0.25);
     a {
       margin: 4px;
       border-radius: 0;
@@ -114,7 +114,11 @@ a {
         border-radius: 4px;
         color: $almost-black;
         outline: none !important;
-        background-color: $dark-greyish;
+        background-color: mix(white, $blue, 95%);
+        .check-mark,
+        .text {
+          color: $blue;
+        }
       }
     }
     .selected {
