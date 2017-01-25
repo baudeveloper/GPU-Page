@@ -128,8 +128,24 @@
       </div>
 
       <main>
+        <div class="tab-content">
+          <div id="monitor" role="tabpanel" class="tab-pane"></div>
+          <!-- #monitor-->
+          <div id="configure" role="tabpanel" class="tab-pane active">
             <div class="column">
               <div id="vm-gpu-component">
+
+                <section class="component-header">
+                  <ul role="tablist" class="child nav nav-tabs">
+                    <li role="presentation" class="active">
+                      <a href="#vm" aria-controls="vm" role="tab" data-toggle="tab">VM</a>
+                    </li>
+                    <li role="presentation">
+                      <a href="#gpu" aria-controls="gpu" role="tab" data-toggle="tab">GPU</a>
+                    </li>
+                  </ul>
+                  <!-- .child-->
+                </section>
                 <!-- .component-header-->
                 <section class="component-content">
                   <div class="tab-content">
@@ -145,9 +161,9 @@
                       <section id="vm-listing">
                         <table class="table table-hover table-bordered" cellspacing="0" width="100%">
                           <colgroup>
+                            <col width="85">
+                            <col width="85">
                             <col>
-                            <col>
-                            <col width="50%">
                             <col>
                           </colgroup>
                           <thead>
@@ -163,7 +179,7 @@
                               <td>10.6.132.140</td>
                               <td>vm1onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option selected>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -182,7 +198,7 @@
                               <td>10.6.132.140</td>
                               <td>vm2onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option selected>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -201,7 +217,7 @@
                               <td>10.6.132.140</td>
                               <td>vm3onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option selected>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -220,7 +236,7 @@
                               <td>10.6.132.140</td>
                               <td>vm4onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -239,7 +255,7 @@
                               <td>10.6.132.140</td>
                               <td>vm5onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -258,7 +274,7 @@
                               <td>10.6.132.140</td>
                               <td>vm6onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -277,7 +293,7 @@
                               <td>10.6.132.140</td>
                               <td>vm7onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -296,7 +312,7 @@
                               <td>10.6.132.140</td>
                               <td>vm8onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -315,7 +331,7 @@
                               <td>10.6.132.140</td>
                               <td>vm1onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -334,7 +350,7 @@
                               <td>10.6.132.140</td>
                               <td>vm1onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option selected>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -353,7 +369,7 @@
                               <td>10.6.132.140</td>
                               <td>vm2onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option selected>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -372,7 +388,7 @@
                               <td>10.6.132.140</td>
                               <td>vm3onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option selected>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -391,7 +407,7 @@
                               <td>10.6.132.140</td>
                               <td>vm4onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -410,7 +426,7 @@
                               <td>10.6.132.140</td>
                               <td>vm5onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -429,7 +445,7 @@
                               <td>10.6.132.140</td>
                               <td>vm6onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -448,7 +464,7 @@
                               <td>10.6.132.140</td>
                               <td>vm7onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -467,7 +483,7 @@
                               <td>10.6.132.140</td>
                               <td>vm8onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -486,7 +502,7 @@
                               <td>10.6.132.140</td>
                               <td>vm1onhost1</td>
                               <td>
-                                <select class="selectpicker show-tick"  data-width="75%">
+                                <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.2 | AMD FirePro S7150 PF</option>
@@ -544,6 +560,10 @@
               <!-- #vm-gpu-component-->
             </div>
             <!-- .column-->
+          </div>
+          <!-- .configure-->
+        </div>
+        <!-- .tab-content-->
       </main>
       <!-- main-->
     </div>
@@ -554,6 +574,7 @@
   <script src="js/bootstrap-slider.min.js"></script>
   <script src="js/jquery.dataTables.min.js"></script>
   <script src="js/dataTables.bootstrap.min.js"></script>
+  <script src="js/dataTables.colResize.js"></script>
   <script src="js/custom.js"></script>
   <script src="js/data-display.js"></script>
   <script src="js/data-updater.js"></script>

@@ -100,16 +100,21 @@
 main {
     margin-bottom: 30px;
     #vm-gpu-component {
-        //border: 1px solid $dark-greyish;
+        border:none;
+        margin-top: 15px;
+        padding-bottom:15px;
+        @include clearfix();
         .child {
-            padding-top: 15px;
             padding-left: 15px;
+            border-top: none;
+            border-left:0;
             border-bottom-color: $dark-greyish;
-            background-color: $cool-greyish;
+            // background-color: $cool-greyish;
             li {
                 float: left;
                 a {
                     margin: 0;
+                    padding: 5px 15px;
                     min-width: 150px;
                     text-align: center;
                     color: $mild-greyish;
@@ -119,6 +124,7 @@ main {
                 }
                 &.active {
                     a {
+                        font-size: 16px;
                         color: $blue;
                         background-color: $white;
                         border-color: $dark-greyish;
@@ -132,13 +138,14 @@ main {
         } // .child
         #vm-header {
             text-align: right;
-            padding: 30px 15px 23px 15px;
+            padding: 15px 15px 10px 15px;
             background-color: $white;
             @include clearfix;
             button {
                 min-width: 165px;
                 margin-left: 15px;
-                padding: 10px 40px;
+                padding: 5px 30px 3px 30px;
+                font-size: 12px;
                 text-transform: uppercase;
                 &:not(.disabled) {
                     @extend .btn-orange;
@@ -146,24 +153,26 @@ main {
             } // button
         } // #vm-header
         #gpu-header {
-            padding: 30px 15px;
+            padding: 15px;
             background-color: $white;
             @include clearfix;
             .slide {
                 width: 440px;
                 float: left;
-                margin-top: 10px;
+                // margin-top: 10px;
                 position: relative;
+                @include clearfix();
                 @media #{$desktop} {
-                    width: 325px;
+                    //width: 325px;
                 }
                 @media #{$tablet} {
                     width: 100%;
                 }
                 span {
+                    display: inline-block;
                     color: $black;
                     font-weight: $font-weight-bold;
-                    margin: 0 5px 0 0;
+                    margin: 5px 5px 0 0;
                     @include font-size(14px);
                     float: left;
                 } // Partitions.
@@ -171,6 +180,12 @@ main {
                     width: 200px;
                     z-index: 5;
                     float: left;
+                    .slider-track {
+                        margin-top: 0;
+                    }
+                    .slider-handle {
+                        margin-top: -5px;
+                    }
                     @media #{$desktop} {
                         width: 250px;
                     }
@@ -179,6 +194,7 @@ main {
             .switch {
                 float: right;
                 width: 150px;
+                margin-top: 3px;
                 label {
                     @include font-size(14px);
                     font-weight: $font-weight-bold;
@@ -206,7 +222,8 @@ main {
                 button {
                     min-width: 165px;
                     margin-left: 15px;
-                    padding: 10px 40px;
+                    padding: 5px 30px 3px 30px;
+                    font-size: 12px;
                     text-transform: uppercase;
                     &:not(.disabled) {
                         @extend .btn-orange;
@@ -217,7 +234,7 @@ main {
                     float: right;
                     text-align: right;
                     button {
-                        padding: 10px 30px;
+                        padding: 5px 30px 3px 30px;
                     } // button
                 }
                 @media #{$tablet} {
@@ -229,9 +246,16 @@ main {
                 }
             } // .pane-actions
         } // #vm-header
+        .component-content {
+            @include clearfix();
+            border: 1px solid $dark-greyish;
+            border-top:none;
+            padding-bottom:15px;
+        }
         #vm-listing {
-            height: 407px; // gives you 12 rows
+            height: 550px; // gives you 12 rows
             padding: 0 0 0 15px;
+            @include clearfix();
             div.dataTables_scroll {
                border-bottom:1px solid $table-border-color; 
             }
@@ -247,6 +271,10 @@ main {
                         > th {
                             background-color:$light-greyish;
                             font-size: 12px;
+                            min-width: 85px;
+                            &:nth-child(3n) {
+                                min-width: 255px;
+                            }
                         }
                     }
                 }
@@ -256,8 +284,10 @@ main {
                             border-left:0;
                             border-right:0;
                             font-size: 12px;
+                            min-width: 85px;
                             &:nth-child(3n) {
                                 padding:0;
+                                min-width: 255px;
                             }
                             .bootstrap-select {
                                 //border-right:1px solid $table-border-color;
@@ -273,6 +303,8 @@ main {
                                     padding:0 8px;
                                 }
                                 &.open {
+                                    border-right:1px solid $table-border-color;
+                                    border-left:1px solid $table-border-color;
                                     .btn {
                                         border-radius:0;
                                         background-color: white!important;

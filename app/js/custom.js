@@ -8,15 +8,14 @@ $(document).ready(function() {
         // order: [[ 1, "asc" ]],
         ordering: false,
         info: false,
-        scrollY: 407, //gives you 12 rows
-        scrollCollapse: true
+        scrollY: 507, //gives you 12 rows
+        scrollCollapse: true,
+        dom: "Zlfrtip",
+        colResize: {
+            tableWidthFixed: false,
+            handleWidth: 43
+        }
     });
-    $('.toggleBtn label').click(function () {
-        var checked = $('input', this).is(':checked');
-        $('span', this).text(checked ? 'Power Off' : 'Power On');
-        $(this).closest('tr').toggleClass('on', 'off');
-    });
-
 } );
 
 var refreshVMList = function () {
