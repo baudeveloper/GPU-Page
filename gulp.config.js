@@ -18,7 +18,8 @@ module.exports = function() {
         ],
         vendorCSS: [
             './bower_components/bootstrap-select/dist/css/bootstrap-select.min.css',
-            './bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css'
+            './bower_components/seiyria-bootstrap-slider/dist/css/bootstrap-slider.min.css',
+            './app/sass/components/dataTables.bootstrap.css'
         ],
         // ./app Locations
         html: './app/*.html',

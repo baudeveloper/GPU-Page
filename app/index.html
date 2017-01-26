@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="css/bootstrap-select.min.css" media="screen">
     <link rel="stylesheet" href="css/bootstrap-slider.min.css" media="screen">
+    <link rel="stylesheet" href="css/dataTables.bootstrap.css" media="screen">
     <link rel="stylesheet" href="css/style.css" media="screen">
    
   <!-- Relative paths are required to keep plugin compatible with Flex and HTML clients -->
   <link rel="stylesheet" href="../assets/css/default.css" media="screen" />
-    <script src="js/modernizr.min.js"></script>       <script src="js/modernizr.min.js"></script>
+    <script src="js/modernizr.min.js"></script>
     <!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><script src="js/respond.min.js"></script><![endif]-->       <!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><script src="js/respond.min.js"></script><![endif]-->
   <!-- Safer not to use CDN links to javascript libraries, the Internet may not be available! -->
   <script src="../assets/jquery-1.10.2.min.js"></script>
@@ -176,9 +177,9 @@
                           </thead>
                           <tbody>
                             <tr class="on">
-                              <td>10.6.132.140</td>
-                              <td>vm1onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm1onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option selected>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -192,12 +193,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power On</td>
+                              <td class="power-status">Power On</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm2onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm2onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option selected>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -211,12 +212,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm3onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm3onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -230,12 +231,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm4onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm4onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -249,12 +250,12 @@
                                   <option selected>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm5onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm5onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -268,12 +269,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr class="on">
-                              <td>10.6.132.140</td>
-                              <td>vm6onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm6onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -287,12 +288,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power On</td>
+                              <td class="power-status">Power On</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm7onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm7onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -306,12 +307,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm8onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm8onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -325,12 +326,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr class="on">
-                              <td>10.6.132.140</td>
-                              <td>vm1onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm1onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -344,12 +345,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power On</td>
+                              <td class="power-status">Power On</td>
                             </tr>
                             <tr class="on">
-                              <td>10.6.132.140</td>
-                              <td>vm1onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm1onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option selected>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -363,12 +364,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power On</td>
+                              <td class="power-status">Power On</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm2onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm2onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option selected>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -382,12 +383,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm3onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm3onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -401,12 +402,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm4onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm4onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -420,12 +421,12 @@
                                   <option selected>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm5onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm5onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -439,12 +440,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr class="on">
-                              <td>10.6.132.140</td>
-                              <td>vm6onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm6onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -458,12 +459,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power On</td>
+                              <td class="power-status">Power On</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm7onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm7onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -477,12 +478,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr>
-                              <td>10.6.132.140</td>
-                              <td>vm8onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm8onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -496,12 +497,12 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power Off</td>
+                              <td class="power-status">Power Off</td>
                             </tr>
                             <tr class="on">
-                              <td>10.6.132.140</td>
-                              <td>vm1onhost1</td>
-                              <td>
+                              <td class="host-ip">10.6.132.140</td>
+                              <td class="vm-name">vm1onhost1</td>
+                              <td class="gpu-picker">
                                 <select class="selectpicker show-tick">
                                   <option>00000:06:02.0 | AMD FirePro S7150 PF</option>
                                   <option>00000:06:02.1 | AMD FirePro S7150 PF</option>
@@ -515,7 +516,7 @@
                                   <option>No GPU</option>
                                 </select>
                               </td>
-                              <td>Power On</td>
+                              <td class="power-status">Power On</td>
                             </tr>
                           </tbody>
                         </table>
